@@ -1,0 +1,46 @@
+/* ====== LAYOUT CON DIVS ====== */
+/* 1 card por fila en móvil, 2 por fila en ≥900px (ajusta breakpoints si quieres) */
+.areas-grid {
+  display: grid;
+  grid-template-columns: 1fr;   /* móvil */
+  gap: 24px;
+}
+@media (min-width: 900px) {     /* md+ ~ desktop/tablet ancha */
+  .areas-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.areas-item { width: 100%; }
+
+/* ====== (resto de estilos existentes) ====== */
+.areas-root { background: #fff; }
+.areas-header { text-align: center; margin-bottom: 18px; }
+.areas-title { font-weight: 900; }
+.areas-subtitle { max-width: 900px; margin: 0 auto; }
+.accent-gradient {
+  background: linear-gradient(90deg, #0ea85a 0%, #9be15d 60%, #f2b400 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+.area-card { border-radius: 18px; overflow: hidden; box-shadow: 0 14px 28px rgba(0,0,0,.08); }
+.media-wrap { position: relative; }
+.area-media { height: 230px; width: 100%; object-fit: cover; display: block; }
+.area-badge {
+  position: absolute; left: 14px; bottom: 14px; font-weight: 800;
+  border-radius: 10px; padding: 0 10px;
+}
+.corner-shape { position: absolute; right: 0; top: 0; width: 120px; height: 90px; border-bottom-left-radius: 18px; opacity: .9; }
+
+.area-content { padding: 20px 22px 24px; }
+.area-bullets { margin: 6px 0 14px; }
+.area-bullet-item { padding-left: 0; }
+.area-bullet-icon { min-width: 28px; }
+
+.area-cta {
+  margin-top: 8px; text-transform: none; font-weight: 800; border-radius: 9999px;
+  width: 100%; box-shadow: 0 10px 24px rgba(0,0,0,.08);
+}
+
+/* Responsive ajustes */
+@media (max-width: 899px) {
+  .area-media { height: 200px; }
+  .corner-shape { width: 100px; height: 76px; }
+}

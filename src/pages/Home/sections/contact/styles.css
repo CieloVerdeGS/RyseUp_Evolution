@@ -1,0 +1,10 @@
+.contact-root {
+  background: linear-gradient(180deg, #f9f9f9 0%, #ffffff 100%);
+}
+
+.contact-form {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

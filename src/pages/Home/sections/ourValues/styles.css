@@ -1,0 +1,51 @@
+/* ====== LAYOUT CON DIVS ====== */
+/* 1 col en móvil, 2 col en tablet, 3 col en desktop */
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr;          /* móvil */
+  gap: 24px;                           /* espacio entre tarjetas */
+}
+
+@media (min-width: 600px) {            /* sm ~ tablet */
+  .values-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 900px) {            /* md+ ~ desktop */
+  .values-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* wrapper por tarjeta, por si quieres controles por-item */
+.values-item { width: 100%; }
+
+/* ====== ESTILOS EXISTENTES (si no los tienes, déjalos) ====== */
+.values-root {
+  background: linear-gradient(180deg, #f3fff6 0%, #ffffff 100%);
+}
+.values-header { text-align: center; margin-bottom: 18px; }
+.values-title { font-weight: 900; }
+.values-subtitle { max-width: 900px; margin: 0 auto; }
+.accent-gradient {
+  background: linear-gradient(90deg, #0ea85a 0%, #9be15d 60%, #f2b400 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+.value-card {
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+}
+.value-content {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 16px;
+  padding: 22px 20px;
+}
+.icon-box {
+  width: 54px; height: 54px; border-radius: 14px; display: grid; place-items: center;
+  color: #fff; background: linear-gradient(180deg, #18a44a 0%, #31d379 100%);
+  box-shadow: 0 8px 20px rgba(24,164,74,.25), inset 0 0 14px rgba(255,255,255,.4);
+}
+@media (max-width: 899px) {
+  .values-subtitle { padding: 0 8px; }
+  .value-content { gap: 14px; }
+}

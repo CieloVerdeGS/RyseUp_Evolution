@@ -1,0 +1,8 @@
+.section-root {
+  min-height: 100vh;         /* cada bloque ocupa la pantalla */
+  display: flex;
+  align-items: center;       /* centra verticalmente el contenido */
+}
+.section-inner {
+  padding: 24px 0;           /* respiración vertical */
+}
