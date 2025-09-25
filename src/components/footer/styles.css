@@ -1,0 +1,96 @@
+.footer-root{
+  background: #0f1b24;
+  color: #cfe6d9;
+  padding: 36px 0 20px;
+}
+
+/* GRID superior */
+.footer-grid{
+  display: grid;
+  gap: 28px;
+  grid-template-columns: 1fr;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+@media (min-width: 900px){
+  .footer-grid{ grid-template-columns: 1.5fr 1fr 1fr 1.3fr; }
+}
+
+/* Marca */
+.brand-title{
+  font-weight: 900;
+  color: #26b063;
+}
+.brand-desc{
+  margin: 10px 0 12px;
+  color: #bcd7c9;
+  max-width: 520px;
+}
+.contact-list{
+  list-style: none; padding: 0; margin: 10px 0;
+}
+.contact-list li{
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 6px; color: #a7c0b3;
+}
+.contact-list svg{ font-size: 20px; opacity: .9; }
+.social-row{
+  display: flex; gap: 14px; margin-top: 8px;
+}
+.social-row a{
+  color: #a7c0b3;
+  transition: color .15s ease, transform .15s ease;
+}
+.social-row a:hover{ color: #26b063; transform: translateY(-2px); }
+
+/* Enlaces */
+.f-heading{ font-weight: 900; color: #f0fff6; margin-bottom: 8px; }
+.f-links ul{ list-style: none; padding: 0; margin: 0; }
+.f-links li{ margin: 6px 0; }
+.f-links a{
+  color: #a7c0b3; text-decoration: none;
+}
+.f-links a:hover{ color: #e9fff4; }
+
+/* Newsletter */
+.f-news .news-desc{ color: #bcd7c9; margin-bottom: 10px; }
+.news-form{
+  display: grid; grid-template-columns: 1fr; gap: 10px;
+}
+@media (min-width: 520px){
+  .news-form{ grid-template-columns: 1fr auto; }
+}
+.news-input .MuiInputBase-root{
+  background: rgba(255,255,255,.06); border-radius: 9999px;
+}
+.news-input input{ color: #e9fff4; }
+.news-btn{
+  border-radius: 9999px;
+  text-transform: none; font-weight: 900;
+  background: linear-gradient(90deg,#19b563 0%, #39d07c 60%, #88efc1 120%);
+}
+
+/* Barra inferior */
+.footer-bottom{
+  display: grid; gap: 10px; align-items: center;
+  grid-template-columns: 1fr; padding-top: 14px;
+}
+@media (min-width: 1000px){
+  .footer-bottom{ grid-template-columns: 1fr 1.2fr 1fr; }
+}
+.footer-bottom .left{ color:#9fc5b5; }
+.footer-bottom .right{
+  display: flex; gap: 12px; justify-content: flex-start; flex-wrap: wrap;
+}
+@media (min-width: 1000px){
+  .footer-bottom .right{ justify-content: flex-end; }
+}
+.footer-bottom .right a{
+  color: #b7d2c5; text-decoration: none;
+}
+.footer-bottom .right a:hover{ color: #e9fff4; }
+.heart{ color: #ef5b78; margin-left: 6px; }
+.quote{
+  text-align: center; color:#bfe9cf;
+}
+.quote .authors{ font-size: 12px; opacity: .8; margin-top: 2px; }

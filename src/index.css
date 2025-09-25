@@ -1,3 +1,39 @@
+:root { --header-h: 76px; }
+
+/* El documento scrollea, sin contenedores internos */
+html, body { height: 100%; margin: 0; padding: 0; scroll-behavior: smooth; }
+
+/* Compensar el header fijo */
+body { padding-top: var(--header-h); }
+
+/* Quitar padding del template de Vite */
+#root { max-width: none; margin: 0; padding: 0; text-align: initial; }
+
+/* === Scroll snap sólo cuando <html> tenga la clase .snap-on === */
+html.snap-on { scroll-snap-type: y mandatory; }
+
+/* Todas las secciones: base y offset contra header */
+.section-root {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  scroll-margin-top: var(--header-h);  /* para que el header no tape el #id */
+  /* por defecto NO son puntos de snap */
+  scroll-snap-align: none;
+}
+
+/* Estas SÍ snapean (las del snap-zone). Usa sus IDs reales */
+#inicio, #somos, #valores, #areas, #desafio, #historia {
+  scroll-snap-align: start;
+  scroll-snap-stop: always; /* un paso, una sección */
+}
+
+/* Secciones largas NO snapean (queda scroll libre) */
+#blog, #contacto { scroll-snap-align: none; }
+
+/* Footer nunca snapea */
+footer, .footer-root { scroll-snap-align: none; }
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

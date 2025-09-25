@@ -1,8 +1,18 @@
 .section-root {
-  min-height: 100vh;         /* cada bloque ocupa la pantalla */
+  min-height: 100vh; /* cada bloque ocupa la pantalla */
   display: flex;
-  align-items: center;       /* centra verticalmente el contenido */
+  align-items: center; /* centra verticalmente el contenido */
 }
 .section-inner {
-  padding: 24px 0;           /* respiración vertical */
+  padding: 24px 0; /* respiración vertical */
+}
+
+#areas,
+#blog,
+#contacto {
+  padding-top: 120px;
+}
+
+#contacto {
+  padding-bottom: 120px;
 }

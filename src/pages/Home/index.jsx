@@ -1,24 +1,18 @@
-import { Box } from "@mui/material";
+// Home sin contenedor con overflow (comentarios en español)
+import { Fragment } from "react";
 import Hero from "./sections/hero/hero";
 import WeAre from "./sections/weAre/weAre";
 import OurValues from "./sections/ourValues/ourValues";
-import History from "./sections/history/history";
 import EvolutionAreas from "./sections/evolutionAreas/evolutionAreas";
 import Challenge from "./sections/challenge/challenge";
+import History from "./sections/history/history";
 import BlogAndResources from "./sections/blogAndResources/blogAndResources";
 import Contact from "./sections/contact/contact";
 import "./styles.css";
 
-const Home = () => {
+export default function Home() {
   return (
-    <Box
-      sx={{
-        height: "100vh",
-        overflowY: "auto",
-        scrollSnapType: "y mandatory",
-        paddingTop: "76px",
-      }}
-    >
+    <Fragment>
       <Hero id="inicio" />
       <WeAre id="somos" />
       <OurValues id="valores" />
@@ -27,8 +21,6 @@ const Home = () => {
       <History id="historia" />
       <BlogAndResources id="blog" />
       <Contact id="contacto" />
-    </Box>
+    </Fragment>
   );
-};
-
-export default Home;
+}
