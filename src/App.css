@@ -40,3 +40,25 @@
 .read-the-docs {
   color: #888;
 }
+
+
+.anton-regular {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, a, p, span, .anton {
+  font-family: 'Anton', sans-serif;
+}
+.roboto {
+  font-family: 'Roboto', sans-serif !important;
+}
+
+.dark-blue-color {
+  color: #1e2938;
+}

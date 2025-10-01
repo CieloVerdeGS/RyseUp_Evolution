@@ -46,26 +46,25 @@ const Header = () => {
     <AppBar
       position="fixed"
       elevation={0}
-      color="transparent"            // <- evita el azul por defecto
-      className={`header-appbar ${scrolled ? "is-scrolled" : ""}`}
+      color="white"     
+      className={`header-appbar is-scrolled`}
     >
       <Container maxWidth="lg">
         <Toolbar disableGutters className="header-toolbar">
-          {/* Marca */}
           <Box
             className="brand"
             role="button"
             tabIndex={0}
             onClick={handleNavClick("#inicio")}
           >
-            <span>Rise Up Evolution</span>
+            <span className="roboto">Rise Up Evolution</span>
           </Box>
 
           <Box className="spacer" />
 
           {/* Nav desktop/tablet ancho */}
           <Box
-            className="nav-links"
+            className="nav-links roboto dark-blue-color"
             sx={{ display: { xs: "none", md: "flex" }, gap: "24px", mr: 1.5 }}
           >
             {NAV.map((item) => (
@@ -73,7 +72,7 @@ const Header = () => {
                 key={item.href}
                 href={item.href}
                 underline="none"
-                className="nav-link"
+                className="nav-link dark-blue-color"
                 onClick={handleNavClick(item.href)}
               >
                 {item.label}
@@ -83,14 +82,13 @@ const Header = () => {
 
           {/* CTA desktop */}
           <Button
-            className="cta-btn"
+            className="cta-btn roboto white-color cta-btn"
             onClick={handleNavClick("#contacto")}
             sx={{ display: { xs: "none", md: "inline-flex" } }}
           >
             Conéctate
           </Button>
 
-          {/* Menú mobile/tablet (md-) */}
           <IconButton
             className="menu-btn"
             edge="end"
@@ -111,7 +109,7 @@ const Header = () => {
         PaperProps={{ className: "drawer-paper" }}
       >
         <Box className="drawer-header">
-          <span className="brand brand--small">Rise Up Evolution</span>
+          <span className="brand brand--small roboto">Rise Up Evolution</span>
           <IconButton aria-label="close menu" onClick={() => setOpen(false)}>
             <CloseRoundedIcon />
           </IconButton>
@@ -124,7 +122,7 @@ const Header = () => {
             </ListItemButton>
           ))}
           <Box className="drawer-cta-wrap">
-            <Button fullWidth className="cta-btn" onClick={handleNavClick("#contacto")}>
+            <Button fullWidth className="cta-btn roboto" onClick={handleNavClick("#contacto")}>
               Conéctate
             </Button>
           </Box>

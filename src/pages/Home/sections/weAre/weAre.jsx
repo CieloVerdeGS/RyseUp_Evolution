@@ -26,20 +26,20 @@ const WeAre = ({ id = "somos" }) => {
           {/* Columna texto */}
           <div>
             <Box className="weare-copy">
-              <Typography component="h2" className="weare-title" gutterBottom>
+              <Typography component="h2" className="weare-title roboto" gutterBottom>
                 Somos Carol y Daniel, y decidimos <span className="accent-gradient">no conformarnos</span>
               </Typography>
 
-              <Typography variant="body1" color="text.secondary" paragraph>
+              <Typography variant="body1" className="weare-text roboto" color="text.secondary" paragraph>
                 Hace años éramos como muchas personas: vivíamos en piloto automático, sintiendo que había
                 algo más esperándonos, pero no sabíamos cómo alcanzarlo.
               </Typography>
-              <Typography variant="body1" color="text.secondary" paragraph>
+              <Typography variant="body1" className="weare-text roboto" color="text.secondary" paragraph>
                 Un día decidimos que era hora de evolucionar. Comenzamos nuestro viaje de transformación
                 personal y descubrimos que el verdadero cambio viene de adentro, pero se potencia con la
                 comunidad correcta.
               </Typography>
-              <Typography variant="body1" color="text.secondary" paragraph>
+              <Typography variant="body1" className="weare-text roboto" color="text.secondary" paragraph>
                 Hoy, después de transformar nuestras propias vidas, hemos dedicado nuestra misión a ayudar
                 a miles de personas a encontrar su mejor versión. Porque creemos que todos merecen vivir
                 una vida extraordinaria.
@@ -49,7 +49,7 @@ const WeAre = ({ id = "somos" }) => {
                 <Typography variant="h5" className="mission-title" gutterBottom>
                   Nuestra Misión
                 </Typography>
-                <Typography variant="body1" className="mission-text">
+                <Typography variant="body1" className="weare-text mission-text color_white">
                   Empoderar a las personas para que descubran su <b>potencial ilimitado</b>, construyan la
                   <b> vida que realmente desean</b> y se conviertan en la <b>inspiración</b> que el mundo necesita.
                 </Typography>

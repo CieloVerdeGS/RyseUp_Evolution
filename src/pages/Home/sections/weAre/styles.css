@@ -1,15 +1,7 @@
-/* src/pages/Home/sections/weAre/styles.css */
-
-/* Sección */
 .weare-root {
   background: linear-gradient(180deg, #f8fffb 0%, #ffffff 100%);
 }
 
-/* Evita que estilos globales rompan el Grid
-.weare-root .MuiGrid-container { display: flex; }
-.weare-root .MuiGrid-item { width: 100%; } */
-
-/* Imagen */
 .weare-media {
   position: relative;
   border-radius: 20px;
@@ -17,15 +9,14 @@
 }
 .weare-img {
   display: block;
-  width: 100%;            /* ocupa el ancho de la columna */
+  width: 100%;        
   height: auto;
   border-radius: 18px;
   border: 3px solid rgba(255, 255, 255, 0.9);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
-  max-width: 560px;       /* opcional: evita que sea gigante en pantallas muy anchas */
+  max-width: 560px; 
 }
 
-/* Decorativos */
 .decoration {
   position: absolute;
   border-radius: 9999px;
@@ -41,15 +32,21 @@
   background: rgba(242, 180, 0, 0.35);
 }
 
-/* Texto */
-.weare-copy { padding: 8px 0; }
+.weare-copy { padding: 8px 0; 
+  max-width: 690px; }
 .weare-title {
-  font-weight: 900;
-  font-size: clamp(26px, 4.2vw, 40px);
-  line-height: 1.1;
-  margin-bottom: 12px;
-  color: #0b1520;
+  font-weight: 900 !important;
+  font-size: clamp(28px, 4.4vw, 42px) !important;
+  line-height: 1.1 !important;
+  margin-bottom: 12px !important;
+  color: #0b1520 !important;
 }
+.weare-text {
+  font-size: 18px !important;
+  line-height: 1.6 !important;
+  color: #4b5c6b !important;
+}
+
 .accent-gradient {
   background: linear-gradient(90deg, #0ea85a 0%, #9be15d 60%, #f2b400 100%);
   -webkit-background-clip: text;
@@ -57,14 +54,16 @@
   color: transparent;
 }
 
-/* Tarjeta misión */
 .mission-card {
-  margin-top: 24px;
-  padding: 22px 24px;
-  border-radius: 18px;
-  color: #ffffff;
-  background: linear-gradient(90deg, #1fbf63 0%, #35d07b 60%, rgba(31, 214, 107, 0.15) 100%);
-  box-shadow: 0 16px 36px rgba(31, 214, 107, 0.25);
+  margin-top: 24px !important;
+  padding: 22px 24px !important;
+   font-weight: 600 !important;
+  border-radius: 18px   !important;
+  color: #ffffff  !important;
+   font-size: 18px !important;
+  line-height: 1.6 !important;
+  background: linear-gradient(90deg, #1fbf63 0%, #35d07b 70%, rgba(31, 214, 107, 0.15) 100%) !important;
+  box-shadow: 0 16px 36px rgba(31, 214, 107, 0.25) !important;
 }
 .mission-title { font-weight: 800; color: #fff; }
 .mission-text { color: rgba(255,255,255,0.95); }
@@ -80,7 +79,6 @@
     gap: 32px;
     flex-direction: column;
 }
-
 }
 
 .weare-grid {
@@ -90,4 +88,12 @@
 .weare-container {
     display: flex;
     gap: 32px;
+}
+
+.roboto {
+  font-family: 'Roboto', sans-serif !important;
+}
+
+.color_white {
+  color: white !important;
 }
