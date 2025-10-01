@@ -5,6 +5,7 @@ import Home from "../src/pages/Home";
 import NotFound from "../src/pages/NotFound";
 import WhatsAppFab from "./components/whatsAppFab";
 import Footer from "./components/footer";
+import CalcFab from "./components/calculator/floatButton";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         </Routes>
       </main>
       <WhatsAppFab phone="57300XXXXXXX" />
+      <CalcFab />
       <Footer />
     </>
   );

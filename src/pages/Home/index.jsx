@@ -9,6 +9,7 @@ import History from "./sections/history/history";
 import BlogAndResources from "./sections/blogAndResources/blogAndResources";
 import Contact from "./sections/contact/contact";
 import "./styles.css";
+import CalculatorEmbed from "../../components/calculator/calculatorEmbed";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <OurValues id="valores" />
       <EvolutionAreas id="areas" />
       <Challenge id="desafio" />
+      <CalculatorEmbed id="calculadora" />
       <History id="historia" />
       <BlogAndResources id="blog" />
       <Contact id="contacto" />

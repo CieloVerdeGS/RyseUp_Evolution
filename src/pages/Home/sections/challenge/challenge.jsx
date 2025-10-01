@@ -5,6 +5,7 @@ import FitnessCenterOutlinedIcon from "@mui/icons-material/FitnessCenterOutlined
 import SupportAgentOutlinedIcon from "@mui/icons-material/SupportAgentOutlined";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import "./styles.css";
+import BannerCalculadora from "../../../../components/calculator/banner";
 
 const FEATURES = [
   {
@@ -90,6 +91,8 @@ const Challenge = ({ id = "desafio" }) => {
             </Button>
           </Box>
         </Box>
+
+        <BannerCalculadora />
       </Container>
     </section>
   );

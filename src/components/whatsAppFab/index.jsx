@@ -21,7 +21,12 @@ const WhatsAppFab = ({
           zIndex: (t) => t.zIndex.tooltip + 1,
           bgcolor: "#25D366",
           color: "#fff",
-          "&:hover": { bgcolor: "#1ebe5d" },
+          transition: "background-color 0.3s ease, transform 0.25s ease, box-shadow 0.25s ease",
+          "&:hover": {
+            bgcolor: "#1ebe5d",
+            transform: "scale(1.1)",
+            boxShadow: "0 8px 18px rgba(37, 211, 102, 0.4)",
+          },
         }}
       >
         <WhatsAppIcon />
