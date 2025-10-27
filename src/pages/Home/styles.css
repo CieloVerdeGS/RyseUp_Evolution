@@ -1,10 +1,10 @@
 .section-root {
-  min-height: 100vh; /* cada bloque ocupa la pantalla */
+  min-height: 100vh;
   display: flex;
-  align-items: center; /* centra verticalmente el contenido */
+  align-items: center;
 }
 .section-inner {
-  padding: 24px 0; /* respiración vertical */
+  padding: 24px 0;
 }
 
 #areas,
@@ -15,4 +15,37 @@
 
 #contacto {
   padding-bottom: 120px;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.snap-parent {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.snap-section {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.footer-section {
+  min-height: auto;
+  scroll-snap-align: end;
+  background-color: #0c0c0c;
+}
+
+.snap-section > *:first-child {
+  margin-block-start: 0;
 }

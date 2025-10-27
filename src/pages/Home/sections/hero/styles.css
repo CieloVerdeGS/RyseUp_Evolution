@@ -55,7 +55,7 @@
 .hero-title {
   font-weight: 900;
   line-height: 1.05;
-  font-size: clamp(36px, 6vw, 64px);
+  font-size: clamp(20px, 4.5vw, 44px);
   margin: 0 0 8px;
 }
 
@@ -133,4 +133,16 @@
 
 .stat-label {
   font-size: 0.98rem;
+}
+
+.to-uppercase {
+  text-transform: uppercase !important;
+}
+
+.vm-20 {
+  margin: 20px 0 !important;
+}
+
+.vm-10 {
+  margin: 10px 0 !important;
 }

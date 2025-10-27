@@ -29,23 +29,21 @@ const Hero = ({ id }) => {
       <Container maxWidth="lg" className="hero-container">
         <Box className="hero-content">
           <Typography variant="h2" className="hero-eyebrow" gutterBottom>
-            <span className="brand-gradient">Rise Up Evolution</span>
+            <span className="brand-gradient to-uppercase">
+              Rise Up Evolution
+            </span>
           </Typography>
 
-          <Typography component="h1" className="hero-title" gutterBottom>
+          <p component="h1" className="hero-title roboto" gutterBottom>
             La evolución comienza{" "}
             <span className="accent-gradient">contigo</span>
-          </Typography>
+          </p>
 
-          <Typography
-            variant="h6"
-            color="text.secondary"
-            className="hero-subtitle"
-          >
+          <p className="hero-subtitle vm-20 roboto">
             Transforma tu vida, alcanza tus sueños y conviértete en la mejor
             versión de ti mismo. Únete a nuestra comunidad de personas que
             decidieron no conformarse.
-          </Typography>
+          </p>
 
           <Box className="hero-ctas">
             <Button
@@ -68,7 +66,12 @@ const Hero = ({ id }) => {
               Ver nuestra historia
             </Button>
           </Box>
-          <Grid container spacing={3} className="stats-wrap" justifyContent={'center'}>
+          {/* <Grid
+            container
+            spacing={3}
+            className="stats-wrap"
+            justifyContent={"center"}
+          >
             {STATS.map((s) => (
               <Grid key={s.label} item xs={12} md={4}>
                 <Card elevation={8} className="stat-card">
@@ -81,7 +84,7 @@ const Hero = ({ id }) => {
                 </Card>
               </Grid>
             ))}
-          </Grid>
+          </Grid> */}
         </Box>
       </Container>
     </section>
