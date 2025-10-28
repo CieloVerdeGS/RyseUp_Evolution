@@ -1,23 +1,12 @@
-import {
-  Container,
-  Box,
-  Typography,
-  Button,
-  Grid,
-  Card,
-  CardContent,
-} from "@mui/material";
+// Hero limpio (comentarios en español)
+import { Container, Box, Typography } from "@mui/material";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
-import PlayCircleOutlineRoundedIcon from "@mui/icons-material/PlayCircleOutlineRounded";
+
 import "./styles.css";
 
-const STATS = [
-  { value: "10,000+", label: "Vidas transformadas" },
-  { value: "500K+", label: "Metas alcanzadas" },
-  { value: "95%", label: "Tasa de éxito" },
-];
-
 const Hero = ({ id }) => {
+  // const handleNavClick = (hash) => () => document.querySelector(hash)?.scrollIntoView({ behavior: "smooth" });
+
   return (
     <section
       id={id}
@@ -34,57 +23,35 @@ const Hero = ({ id }) => {
             </span>
           </Typography>
 
-          <p component="h1" className="hero-title roboto" gutterBottom>
+          <h1 className="hero-title roboto">
             La evolución comienza{" "}
             <span className="accent-gradient">contigo</span>
-          </p>
+          </h1>
 
-          <p className="hero-subtitle vm-20 roboto">
+          <p className="hero-subtitle roboto">
             Transforma tu vida, alcanza tus sueños y conviértete en la mejor
             versión de ti mismo. Únete a nuestra comunidad de personas que
             decidieron no conformarse.
           </p>
+          <p className="hero-subtitle m-0 roboto">
+            En colaboracion con <b>WeDoTransformations</b>
+          </p>
+          <img
+            src="/images/WeDoTransformations.png"
+            alt="WeDoTransformations"
+            className="WeDoTransformations-img"
+          />
 
-          <Box className="hero-ctas">
-            <Button
-              variant="contained"
-              size="large"
-              className="cta-primary"
-              endIcon={<ArrowForwardRoundedIcon />}
-              href="#contacto"
-            >
-              Quiero empezar mi evolución
-            </Button>
+          <div className="hero-ctas">
+            <button type="button" className="cta-btn-green roboto">
+              <span>Quiero empezar mi evolución</span>
+              <ArrowForwardRoundedIcon className="cta-icon" />
+            </button>
 
-            <Button
-              variant="outlined"
-              size="large"
-              className="cta-secondary"
-              startIcon={<PlayCircleOutlineRoundedIcon />}
-              href="#historia"
-            >
-              Ver nuestra historia
-            </Button>
-          </Box>
-          {/* <Grid
-            container
-            spacing={3}
-            className="stats-wrap"
-            justifyContent={"center"}
-          >
-            {STATS.map((s) => (
-              <Grid key={s.label} item xs={12} md={4}>
-                <Card elevation={8} className="stat-card">
-                  <CardContent className="stat-content">
-                    <Typography className="stat-value">{s.value}</Typography>
-                    <Typography color="text.secondary" className="stat-label">
-                      {s.label}
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid> */}
+            <button type="button" className="cta-btn-white roboto">
+              <span>Resultados</span>
+            </button>
+          </div>
         </Box>
       </Container>
     </section>

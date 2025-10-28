@@ -21,7 +21,7 @@
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.55); /* velo suave como en tu mock */
+  background: rgba(255, 255, 255, 0.55);
   backdrop-filter: blur(2px);
   z-index: 1;
 }
@@ -42,7 +42,6 @@
   align-items: center;
 }
 
-/* Eyebrow con gradiente marca */
 .brand-gradient {
   background: linear-gradient(90deg, #1aa64b 0%, #6fce3a 45%, #f2b400 100%);
   -webkit-background-clip: text;
@@ -51,7 +50,6 @@
   font-weight: 800;
 }
 
-/* Título principal grande */
 .hero-title {
   font-weight: 900;
   line-height: 1.05;
@@ -59,7 +57,6 @@
   margin: 0 0 8px;
 }
 
-/* Palabra en degradado */
 .accent-gradient {
   background: linear-gradient(90deg, #1aa64b 0%, #b3e561 60%, #f2b400 100%);
   -webkit-background-clip: text;
@@ -67,20 +64,17 @@
   color: transparent;
 }
 
-/* Subtítulo */
 .hero-subtitle {
   max-width: 860px;
-  margin: 0 auto;
+  font-size: clamp(16px, 2.5vw, 16px);
+  margin: 20px auto;
   text-align: center;
 }
 
-/* CTAs */
 .hero-ctas {
   display: flex;
-  gap: 12px;
   justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 20px;
+  align-items: center;
 }
 
 .cta-primary {
@@ -98,6 +92,21 @@
   color: #fff;
 }
 
+.WeDoTransformations-img {
+  object-fit: contain;
+  max-width: 35vh;
+}
+
+.cta-btn-white {
+  text-transform: none;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 9999px;
+  box-shadow: 0 8px 16px rgba(31, 214, 107, 0.2);
+  background-color: #fff;
+  color: #22c55e;
+}
+
 .cta-secondary {
   text-transform: none;
   font-weight: 700;
@@ -106,7 +115,6 @@
   border-width: 2px;
 }
 
-/* Métricas */
 .stats-wrap {
   margin-top: 28px;
 }
@@ -145,4 +153,134 @@
 
 .vm-10 {
   margin: 10px 0 !important;
+}
+
+.hero-ctas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.cta-btn-green,
+.cta-btn-white {
+  min-height: 56px;
+  padding: 14px 28px;
+  border-radius: 9999px;
+  border: none;
+  outline: none;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.2px;
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  cursor: pointer;
+  transition: background 220ms ease, color 220ms ease, box-shadow 220ms ease,
+    transform 120ms ease;
+  box-shadow: 0 10px 20px rgba(31, 214, 107, 0.18);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.cta-icon {
+  font-size: 1.25rem;
+  transform: translateY(1px);
+}
+
+.cta-btn-green {
+  color: #fff;
+  background: linear-gradient(
+    90deg,
+    #1fbf63 0%,
+    #1fd66b 60%,
+    rgba(31, 214, 107, 0.25) 100%
+  );
+}
+.cta-btn-green:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 24px rgba(31, 214, 107, 0.28);
+}
+.cta-btn-green:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 16px rgba(31, 214, 107, 0.18);
+}
+
+.cta-btn-white {
+  background-color: #fff;
+  color: #22c55e;
+  box-shadow: 0 8px 16px rgba(31, 214, 107, 0.14);
+}
+.cta-btn-white:hover {
+  color: #fff;
+  background: linear-gradient(
+    90deg,
+    #1fbf63 0%,
+    #1fd66b 60%,
+    rgba(31, 214, 107, 0.25) 100%
+  );
+  transform: translateY(-1px);
+  box-shadow: 0 14px 24px rgba(31, 214, 107, 0.24);
+}
+.cta-btn-white:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 16px rgba(31, 214, 107, 0.14);
+}
+
+@media (max-width: 600px) {
+  .hero-ctas {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .cta-btn-green,
+  .cta-btn-white {
+    width: 100%;
+    white-space: normal;
+    text-align: center;
+    min-height: 52px;
+  }
+}
+
+@supports (font-smooth: antialiased) {
+  .cta-btn-green,
+  .cta-btn-white {
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.cta-btn-green {
+  color: #fff;
+  background: linear-gradient(
+    90deg,
+    #1fbf63 0%,
+    #1fd66b 60%,
+    rgba(31, 214, 107, 0.25) 100%
+  );
+  transition: all 220ms ease;
+}
+
+.cta-btn-green:hover {
+  background: linear-gradient(
+    90deg,
+    #189b51 0%,
+    #19b25c 60%,
+    rgba(31, 214, 107, 0.3) 100%
+  );
+  transform: translateY(-1px);
+  box-shadow: 0 14px 24px rgba(25, 178, 92, 0.4);
+}
+
+.cta-btn-green:active {
+  background: linear-gradient(
+    90deg,
+    #158347 0%,
+    #169953 60%,
+    rgba(25, 178, 92, 0.35) 100%
+  );
+  transform: translateY(0);
+  box-shadow: 0 8px 16px rgba(25, 178, 92, 0.3);
 }
