@@ -1,4 +1,3 @@
-// src/pages/Home/sections/weAre/weAre.jsx
 import { Container, Box, Typography, Paper } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
@@ -30,7 +29,6 @@ const WeAre = ({ id = "somos" }) => {
     >
       <Container maxWidth="lg">
         <div className="weare-container">
-          {/* Columna imagen (ahora con Swiper) */}
           <div>
             <Box className="weare-media">
               <Swiper
@@ -59,21 +57,16 @@ const WeAre = ({ id = "somos" }) => {
                   </SwiperSlide>
                 ))}
               </Swiper>
-
-              {/* Decorativos existentes */}
               <span className="decoration deco-1" />
               <span className="decoration deco-2" />
             </Box>
           </div>
-
-          {/* Columna texto (sin cambios) */}
           <div>
             <Box className="weare-copy">
               <Typography component="h2" className="weare-title roboto" gutterBottom>
                 Somos Carol y Daniel, y decidimos{" "}
                 <span className="accent-gradient">no conformarnos</span>
               </Typography>
-
               <Typography
                 variant="body1"
                 className="weare-text roboto"

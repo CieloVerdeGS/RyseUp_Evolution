@@ -1,22 +1,18 @@
-/* ====== LAYOUT CON DIVS ====== */
-/* 1 col en móvil, 2 col en tablet, 3 col en desktop */
 .values-grid {
   display: grid;
-  grid-template-columns: 1fr;          /* móvil */
-  gap: 24px;                           /* espacio entre tarjetas */
+  grid-template-columns: 1fr;        
+  gap: 24px;                          
 }
 
-@media (min-width: 600px) {            /* sm ~ tablet */
+@media (min-width: 600px) {            
   .values-grid { grid-template-columns: repeat(2, 1fr); }
 }
-@media (min-width: 900px) {            /* md+ ~ desktop */
+@media (min-width: 900px) {           
   .values-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* wrapper por tarjeta, por si quieres controles por-item */
 .values-item { width: 100%; }
 
-/* ====== ESTILOS EXISTENTES (si no los tienes, déjalos) ====== */
 .values-root {
   background: linear-gradient(180deg, #f3fff6 0%, #ffffff 100%);
 }

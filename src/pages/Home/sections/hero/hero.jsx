@@ -3,14 +3,12 @@ import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 import "./styles.css";
 
 const Hero = ({ id }) => {
-
-    const handleNavClick = (href) => (e) => {
+  const handleNavClick = (href) => (e) => {
     e.preventDefault();
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
     setOpen(false);
   };
-
 
   return (
     <section
@@ -22,7 +20,11 @@ const Hero = ({ id }) => {
       <div className="hero-overlay" />
       <Container maxWidth="lg" className="hero-container">
         <Box className="hero-content">
-          <Typography variant="h2" className="hero-eyebrow title-font" gutterBottom>
+          <Typography
+            variant="h2"
+            className="hero-eyebrow title-font"
+            gutterBottom
+          >
             <span className="brand-gradient to-uppercase">
               Rise Up Evolution
             </span>
@@ -48,7 +50,11 @@ const Hero = ({ id }) => {
           />
 
           <div className="hero-ctas">
-            <button onClick={handleNavClick("#contacto")} type="button" className="cta-btn-green text-font ">
+            <button
+              onClick={handleNavClick("#contacto")}
+              type="button"
+              className="cta-btn-green text-font "
+            >
               <span>Quiero empezar mi evolución</span>
               <ArrowForwardRoundedIcon className="cta-icon" />
             </button>

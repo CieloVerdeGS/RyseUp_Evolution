@@ -128,9 +128,8 @@
 }
 
 .weare-swiper {
-  max-width: 560px; /* respeta tu límite para la imagen */
+  max-width: 560px; 
   width: 100%;
-  /* La altura seguirá la proporción de la imagen porque usas height:auto en .weare-img */
 }
 
 .weare-swiper .swiper-wrapper,
@@ -139,7 +138,6 @@
   height: 100%;
 }
 
-/* Asegura que la imagen del slide se comporte igual que antes */
 .weare-swiper .weare-img {
   display: block;
   width: 100%;
