@@ -16,6 +16,10 @@ html.snap-on { scroll-snap-type: y mandatory; }
   scroll-snap-align: none;
 }
 
+/* #somos {
+  margin-top: 80px;
+} */
+
 #inicio, #somos, #valores, #areas, #desafio, #historia {
   scroll-snap-align: start;
   scroll-snap-stop: always; 
