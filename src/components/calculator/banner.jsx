@@ -21,7 +21,8 @@ const BannerCalculadora = () => {
           Calcula tu evolución 🚀
         </Typography>
         <Typography variant="body1" color="text.secondary" mb={3}>
-          Descubre cómo alcanzar tu mejor versión con nuestra herramienta gratuita.
+          Descubre cómo alcanzar tu mejor versión con nuestra herramienta
+          gratuita.
         </Typography>
         <Button
           variant="contained"

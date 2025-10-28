@@ -57,6 +57,7 @@
     rgba(31, 214, 107, 0.15) 100%
   );
   color: #fff;
+  max-width: 200px;
 }
 .drawer-paper {
   width: min(86vw, 360px);
@@ -76,8 +77,7 @@
 }
 
 .roboto {
-  font-family: "Roboto", sans-serif !important;
-}
+  font-family: "Inconsolata", monospace !important;}
 
 .dark-blue-color {
   color: #1e2938 !important;
@@ -88,8 +88,7 @@
 }
 
 .nav-link {
-  font-family: "Roboto", sans-serif !important;
-  font-size: 17px !important;
+  font-family: "Inconsolata", monospace !important;  font-size: 17px !important;
   font-weight: 500 !important;
 }
 
@@ -108,4 +107,13 @@
   color: #fff !important;
   margin-left: 25px !important;
    font-size: 16px !important;
+}
+
+.title-font {
+  font-family: "Anton", sans-serif !important;
+  letter-spacing: 1.5px !important;
+}
+
+.text-font {
+  font-family: "Inconsolata", monospace !important;
 }

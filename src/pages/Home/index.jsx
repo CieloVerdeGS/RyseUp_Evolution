@@ -24,11 +24,9 @@ export default function Home() {
       <Section id="valores"><OurValues /></Section>
       <Section id="areas"><EvolutionAreas /></Section>
       <Section id="desafio"><Challenge /></Section>
-      <Section id="calculadora"><CalculatorEmbed /></Section>
       <Section id="historia"><History /></Section>
-      <Section id="blog"><BlogAndResources /></Section>
+      <Section id="recursos"><BlogAndResources /></Section>
       <Section id="contacto"><Contact /></Section>
-      {/* <Section id="contacto"><Footer /></Section> */}
            <section id="footer" className="snap-section footer-section">
         <Footer />
       </section>

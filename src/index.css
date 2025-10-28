@@ -95,7 +95,7 @@ button:focus-visible {
 }
 
 .roboto {
-  font-family: 'Roboto', sans-serif !important;
+  font-family: "Inconsolata", monospace !important;
 }
 
 .dark-blue-color {
@@ -106,3 +106,10 @@ button:focus-visible {
   color: #ffffff !important;
 }
 
+.title-font {
+  font-family: "Anton", sans-serif !important;
+}
+
+.text-font {
+  font-family: "Inconsolata", monospace !important;
+}

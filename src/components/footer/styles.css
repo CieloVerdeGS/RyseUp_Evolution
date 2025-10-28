@@ -8,7 +8,7 @@
 .footer-grid{
   display: grid;
   gap: 28px;
-  grid-template-columns: 1fr;
+  grid-template-columns: 2fr;
   padding-bottom: 18px;
   border-bottom: 1px solid rgba(255,255,255,.08);
 }

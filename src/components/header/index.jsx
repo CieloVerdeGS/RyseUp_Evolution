@@ -10,7 +10,6 @@ import {
   Drawer,
   List,
   ListItemButton,
-  ListItemText,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
@@ -19,9 +18,10 @@ import "./styles.css";
 const NAV = [
   { label: "Inicio", href: "#inicio" },
   { label: "Sobre Nosotros", href: "#somos" },
-  { label: "Áreas", href: "#areas" },
-  { label: "Comunidad", href: "#comunidad" },
-  { label: "Blog", href: "#blog" },
+  { label: "Áreas de Evolución", href: "#areas" },
+  { label: "Historias", href: "#comunidad" },
+  { label: "Recursos Gratis", href: "#recursos" },
+  // { label: "Blog", href: "#blog" },
 ];
 
 const Header = () => {
@@ -46,7 +46,7 @@ const Header = () => {
     <AppBar
       position="fixed"
       elevation={0}
-      color="white"     
+      color="white"
       className={`header-appbar is-scrolled`}
     >
       <Container maxWidth="lg">
@@ -57,7 +57,7 @@ const Header = () => {
             tabIndex={0}
             onClick={handleNavClick("#inicio")}
           >
-            <span className="roboto">Rise Up Evolution</span>
+            <span className="title-font">Rise Up Evolution</span>
           </Box>
 
           <Box className="spacer" />
@@ -72,7 +72,7 @@ const Header = () => {
                 key={item.href}
                 href={item.href}
                 underline="none"
-                className="nav-link dark-blue-color"
+                className="nav-link dark-blue-color text-font"
                 onClick={handleNavClick(item.href)}
               >
                 {item.label}
@@ -82,7 +82,7 @@ const Header = () => {
 
           {/* CTA desktop */}
           <Button
-            className="cta-btn roboto white-color cta-btn"
+            className="cta-btn text-font white-color cta-btn"
             onClick={handleNavClick("#contacto")}
             sx={{ display: { xs: "none", md: "inline-flex" } }}
           >
@@ -94,7 +94,7 @@ const Header = () => {
             edge="end"
             aria-label="open menu"
             onClick={() => setOpen(true)}
-            sx={{ display: { xs: "inline-flex", md: "none" } }}  // <- oculta en desktop
+            sx={{ display: { xs: "inline-flex", md: "none" } }} // <- oculta en desktop
           >
             <MenuIcon />
           </IconButton>
@@ -106,26 +106,92 @@ const Header = () => {
         anchor="right"
         open={open}
         onClose={() => setOpen(false)}
-        PaperProps={{ className: "drawer-paper" }}
+        PaperProps={{
+          className: "drawer-paper",
+          sx: {
+            backgroundColor: "#fff",
+            padding: "1.2rem",
+            fontFamily: "'Inconsolata', monospace",
+          },
+        }}
       >
-        <Box className="drawer-header">
-          <span className="brand brand--small roboto">Rise Up Evolution</span>
+        {/* Header del Drawer */}
+        <Box
+          className="drawer-header"
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            mb: 2,
+          }}
+        >
+          <span
+            className="brand brand--small title-font"
+            style={{
+              fontFamily: "'Anton', sans-serif",
+              fontSize: "1.5rem",
+              letterSpacing: "0.05em",
+              color: "#12b159",
+            }}
+          >
+            Rise Up Evolution
+          </span>
+
           <IconButton aria-label="close menu" onClick={() => setOpen(false)}>
             <CloseRoundedIcon />
           </IconButton>
         </Box>
 
-        <List className="drawer-list">
+        {/* Lista de enlaces */}
+        <List
+          className="drawer-list"
+          sx={{
+            "& .MuiListItemButton-root": {
+              fontFamily: "'Inconsolata', monospace",
+              textAlign: "center",
+              borderRadius: "8px",
+              mb: 1,
+              transition: "background 0.3s ease, color 0.3s ease",
+              "&:hover": {
+                background: "rgba(18, 177, 89, 0.08)",
+                color: "#12b159",
+              },
+            },
+            "& .MuiListItemText-primary": {
+              fontSize: "1.1rem",
+              fontWeight: 500,
+              letterSpacing: "0.03em",
+            },
+          }}
+        >
           {NAV.map((item) => (
             <ListItemButton key={item.href} onClick={handleNavClick(item.href)}>
-              <ListItemText primary={item.label} />
+              <p>{item.label}</p>
             </ListItemButton>
           ))}
-          <Box className="drawer-cta-wrap">
-            <Button fullWidth className="cta-btn roboto" onClick={handleNavClick("#contacto")}>
-              Conéctate
-            </Button>
-          </Box>
+
+          {/* Botón CTA */}
+          <Button
+            fullWidth
+            onClick={handleNavClick("#contacto")}
+            sx={{
+              mt: 2,
+              py: 1.2,
+              borderRadius: "50px",
+              fontFamily: "'Inconsolata', monospace",
+              fontWeight: 600,
+              background: "linear-gradient(90deg, #12b159, #F4C542)",
+              color: "#fff",
+              textTransform: "none",
+              fontSize: "1rem",
+              transition: "background 0.3s ease",
+              "&:hover": {
+                background: "linear-gradient(90deg, #0e9448, #d4a731)",
+              },
+            }}
+          >
+            Conéctate
+          </Button>
         </List>
       </Drawer>
     </AppBar>

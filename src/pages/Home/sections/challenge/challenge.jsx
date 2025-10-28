@@ -91,8 +91,6 @@ const Challenge = ({ id = "desafio" }) => {
             </Button>
           </Box>
         </Box>
-
-        <BannerCalculadora />
       </Container>
     </section>
   );

@@ -183,10 +183,10 @@ const Contact = ({ id = "contacto" }) => {
                     >
                       {s.user}
                     </Typography>
-                    <div className="social-stat">
+                    {/* <div className="social-stat">
                       <span className="value">{s.stat}</span>{" "}
                       <span>{s.statLabel}</span>
-                    </div>
+                    </div> */}
                     <Typography variant="caption" color="text.secondary">
                       {s.desc}
                     </Typography>
@@ -231,22 +231,9 @@ const Contact = ({ id = "contacto" }) => {
                   </div>
                   <div>
                     <div className="info-label">Ubicación</div>
-                    <div className="info-value">Ciudad de México, México</div>
+                    <div className="info-value">Bogotá, Colombia</div>
                   </div>
                 </div>
-
-                <Card variant="outlined" className="hours-card">
-                  <CardContent>
-                    <div className="hours-title">
-                      <AccessTimeRoundedIcon /> Horarios de Atención
-                    </div>
-                    <div className="hours-lines">
-                      <div>Lunes a Viernes: 9:00 AM - 6:00 PM (GMT-6)</div>
-                      <div>Sábados: 9:00 AM - 2:00 PM</div>
-                      <div>Domingos: Solo emergencias</div>
-                    </div>
-                  </CardContent>
-                </Card>
               </CardContent>
             </Card>
           </div>

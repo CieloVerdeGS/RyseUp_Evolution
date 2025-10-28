@@ -284,3 +284,12 @@
   transform: translateY(0);
   box-shadow: 0 8px 16px rgba(25, 178, 92, 0.3);
 }
+
+.title-font {
+  font-family: "Anton", sans-serif !important;
+  letter-spacing: 1.5px !important;
+}
+
+.text-font {
+  font-family: "Inconsolata", monospace !important;
+}
