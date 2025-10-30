@@ -6,7 +6,6 @@ import Challenge from "./sections/challenge/challenge";
 import History from "./sections/history/history";
 import BlogAndResources from "./sections/blogAndResources/blogAndResources";
 import Contact from "./sections/contact/contact";
-import CalculatorEmbed from "../../components/calculator/calculatorEmbed";
 import Footer from "../../components/footer";
 import "./styles.css";
 
@@ -27,9 +26,9 @@ export default function Home() {
       <Section id="historia"><History /></Section>
       <Section id="recursos"><BlogAndResources /></Section>
       <Section id="contacto"><Contact /></Section>
-           <section id="footer" className="snap-section footer-section">
-        <Footer />
-      </section>
+      <section id="footer" clas sName="snap-section footer-section">
+      <Footer />
+    </section>
     </main>
   );
 }

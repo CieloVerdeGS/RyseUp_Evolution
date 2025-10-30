@@ -110,7 +110,7 @@ const EvolutionAreas = ({ id = "areas" }) => {
         </Box>
 
         {/* 👇 Layout con divs */}
-        <div className="areas-grid">
+        <div className="areas-grid mb-80 ">
           {AREAS.map((a) => (
             <div key={a.key} className="areas-item">
               <div className="area-card" elevation={6}>
@@ -126,10 +126,10 @@ const EvolutionAreas = ({ id = "areas" }) => {
                       component="img"
                       src={a.img}
                       alt={a.title}
-                      className="area-media"
+                      className="area-media "
                     />
                     <span
-                      className="corner-shape"
+                      className="corner-shape "
                       style={{ background: a.color }}
                     />
                     <Chip
@@ -176,11 +176,11 @@ const EvolutionAreas = ({ id = "areas" }) => {
                     ))}
                   </ul>
 
-                  <Button
+                  <div
                     variant="contained"
                     size="large"
                     className="area-cta text-font"
-                    style={{ background: a.color }}
+                    style={{ "--area-color": a.color }}
                     onClick={() =>
                       window.location.replace(window.location.origin + a.url)
                     }
@@ -189,7 +189,7 @@ const EvolutionAreas = ({ id = "areas" }) => {
                     }
                   >
                     {a.ctaText}
-                  </Button>
+                  </div>
                 </CardContent>
               </div>
             </div>
