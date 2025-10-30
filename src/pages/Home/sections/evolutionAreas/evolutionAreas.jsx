@@ -1,4 +1,3 @@
-// EvolutionAreas — divs + CSS (comentarios en español)
 import {
   Container,
   Box,
@@ -25,57 +24,88 @@ const AREAS = [
   {
     key: "wellness",
     title: "Salud y Bienestar",
+    url: "/salud-y-bienestar",
     img: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?q=80&w=1600&auto=format&fit=crop",
     color: "#13b15a",
     ctaColor: "#12b159",
     ctaText: "Explorar Salud y Bienestar",
     icon: <RestaurantRoundedIcon />,
-    bullets: ["Nutrición personalizada", "Rutinas de ejercicio efectivas", "Mindfulness y bienestar mental"],
+    bullets: [
+      "Nutrición personalizada",
+      "Rutinas de ejercicio efectivas",
+      "Mindfulness y bienestar mental",
+    ],
   },
   {
     key: "business",
     title: "Negocios",
+    url: "/negocios",
     img: "https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=1600&auto=format&fit=crop",
     color: "#f2b400",
     ctaColor: "#f2b400",
     ctaText: "Explorar Negocios",
     icon: <BusinessCenterRoundedIcon />,
-    bullets: ["Estrategias de networking", "Liderazgo auténtico", "Crecimiento empresarial"],
+    bullets: [
+      "Estrategias de networking",
+      "Liderazgo auténtico",
+      "Crecimiento empresarial",
+    ],
   },
   {
     key: "spiritual",
     title: "Personal y Espiritual",
+    url: "/personal-y-espiritual",
     img: "https://images.unsplash.com/photo-1494797710133-75ad3b87a5f2?q=80&w=1600&auto=format&fit=crop",
     color: "#bb39ff",
     ctaColor: "#d240ff",
     ctaText: "Explorar Personal y Espiritual",
     icon: <AutoAwesomeRoundedIcon />,
-    bullets: ["Autoconocimiento profundo", "Prácticas espirituales", "Conexión con propósito"],
+    bullets: [
+      "Autoconocimiento profundo",
+      "Prácticas espirituales",
+      "Conexión con propósito",
+    ],
   },
   {
     key: "dreams",
     title: "Sueños",
+    url: "/suenos",
     img: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1600&auto=format&fit=crop",
     color: "#3487ff",
     ctaColor: "#2f82ff",
     ctaText: "Explorar Sueños",
     icon: <RocketLaunchRoundedIcon />,
-    bullets: ["Claridad en objetivos", "Planificación estratégica", "Celebración de logros"],
+    bullets: [
+      "Claridad en objetivos",
+      "Planificación estratégica",
+      "Celebración de logros",
+    ],
   },
 ];
 
 const EvolutionAreas = ({ id = "areas" }) => {
   return (
-    <section id={id} className="section-root areas-root" style={{ scrollSnapAlign: "start" }}>
+    <section
+      id={id}
+      className="section-root areas-root"
+      style={{ scrollSnapAlign: "start" }}
+    >
       <Container maxWidth="lg">
-        {/* Encabezado */}
-        <Box className="areas-header">
-          <Typography variant="h3" className="areas-title" gutterBottom>
-            Áreas de <span className="accent-gradient">Evolución</span>
+        <Box className="values-header">
+          <Typography
+            variant="h3"
+            className="values-title title-font"
+            gutterBottom
+          >
+            Nuestros <span className="accent-gradient">Valores</span>
           </Typography>
-          <Typography variant="body1" color="text.secondary" className="areas-subtitle">
-            Desarrollamos un enfoque integral que abarca todas las dimensiones de tu vida.
-            Porque la verdadera evolución sucede cuando trabajas en todos los aspectos de tu ser.
+          <Typography
+            variant="body1"
+            color="text.secondary"
+            className="values-subtitle text-font"
+          >
+            Estos principios guían cada decisión que tomamos y cada paso que
+            damos en nuestro camino hacia la evolución.
           </Typography>
         </Box>
 
@@ -83,24 +113,45 @@ const EvolutionAreas = ({ id = "areas" }) => {
         <div className="areas-grid">
           {AREAS.map((a) => (
             <div key={a.key} className="areas-item">
-              <Card className="area-card" elevation={6}>
+              <div className="area-card" elevation={6}>
                 <CardActionArea
-                  onClick={() => document.querySelector("#contacto")?.scrollIntoView({ behavior: "smooth" })}
+                  onClick={() =>
+                    document
+                      .querySelector("#contacto")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
                 >
                   <Box className="media-wrap">
-                    <CardMedia component="img" src={a.img} alt={a.title} className="area-media" />
-                    <span className="corner-shape" style={{ background: a.color }} />
+                    <CardMedia
+                      component="img"
+                      src={a.img}
+                      alt={a.title}
+                      className="area-media"
+                    />
+                    <span
+                      className="corner-shape"
+                      style={{ background: a.color }}
+                    />
                     <Chip
                       icon={a.icon}
                       label={a.title}
                       className="area-badge"
-                      sx={{ bgcolor: "rgba(0,0,0,0.4)", color: "#fff", "& .MuiChip-icon": { color: "#fff" } }}
+                      sx={{
+                        bgcolor: "rgba(0,0,0,0.4)",
+                        color: "#fff",
+                        "& .MuiChip-icon": { color: "#fff" },
+                      }}
                     />
                   </Box>
                 </CardActionArea>
 
                 <CardContent className="area-content">
-                  <Typography variant="body1" color="text.secondary" mb={1.5}>
+                  <p
+                    variant="body1"
+                    color="text.secondary"
+                    className="text-font"
+                    mb={1.5}
+                  >
                     {a.key === "wellness" &&
                       "Transforma tu cuerpo y mente con hábitos saludables que perduran. Descubre el poder de una vida equilibrada."}
                     {a.key === "business" &&
@@ -109,31 +160,38 @@ const EvolutionAreas = ({ id = "areas" }) => {
                       "Conecta con tu esencia más profunda y desarrolla la sabiduría interior que te guiará hacia tu propósito."}
                     {a.key === "dreams" &&
                       "Convierte tus sueños más grandes en realidad con estrategias probadas y el mindset correcto."}
-                  </Typography>
+                  </p>
 
-                  <List dense disablePadding className="area-bullets">
+                  <ul dense disablePadding className="area-bullets text-font">
                     {a.bullets.map((b, idx) => (
-                      <ListItem key={idx} disableGutters className="area-bullet-item">
-                        <ListItemIcon className="area-bullet-icon">
-                          <FiberManualRecordRoundedIcon sx={{ fontSize: 10, color: a.color }} />
-                        </ListItemIcon>
-                        <ListItemText primaryTypographyProps={{ variant: "body2" }} primary={b} />
-                      </ListItem>
+                      <li
+                        key={idx}
+                        disableGutters
+                        className="area-bullet-item text-font"
+                      >
+                        <span primaryTypographyProps={{ variant: "body2" }}>
+                          {b}
+                        </span>
+                      </li>
                     ))}
-                  </List>
+                  </ul>
 
                   <Button
                     variant="contained"
                     size="large"
-                    className="area-cta"
-                    sx={{ bgcolor: a.ctaColor, "&:hover": { bgcolor: a.ctaColor } }}
-                    onClick={() => document.querySelector("#contacto")?.scrollIntoView({ behavior: "smooth" })}
-                    endIcon={<span style={{ fontWeight: 800, fontSize: 18 }}>→</span>}
+                    className="area-cta text-font"
+                    style={{ background: a.color }}
+                    onClick={() =>
+                      window.location.replace(window.location.origin + a.url)
+                    }
+                    endIcon={
+                      <span style={{ fontWeight: 800, fontSize: 18 }}>→</span>
+                    }
                   >
                     {a.ctaText}
                   </Button>
                 </CardContent>
-              </Card>
+              </div>
             </div>
           ))}
         </div>
