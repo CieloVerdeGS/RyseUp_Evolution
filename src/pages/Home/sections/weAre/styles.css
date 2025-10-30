@@ -146,3 +146,12 @@
   border: 3px solid rgba(255, 255, 255, 0.9);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
 }
+
+.title-font {
+  font-family: "Anton", sans-serif !important;
+  letter-spacing: 1.5px !important;
+}
+
+.text-font {
+  font-family: "Inconsolata", monospace !important;
+}

@@ -63,7 +63,7 @@ const WeAre = ({ id = "somos" }) => {
           </div>
           <div>
             <Box className="weare-copy">
-              <Typography component="h2" className="weare-title roboto" gutterBottom>
+              <Typography component="h2" className="weare-title title-font" gutterBottom>
                 Somos Carol y Daniel, y decidimos{" "}
                 <span className="accent-gradient">no conformarnos</span>
               </Typography>
@@ -99,10 +99,10 @@ const WeAre = ({ id = "somos" }) => {
               </Typography>
 
               <Paper elevation={0} className="mission-card">
-                <Typography variant="h5" className="mission-title" gutterBottom>
+                <Typography variant="h5" className="mission-title title-font" gutterBottom>
                   Nuestra Misión
                 </Typography>
-                <Typography variant="body1" className="weare-text mission-text color_white">
+                <Typography variant="body1" className="weare-text mission-text color_white text-font">
                   Empoderar a las personas para que descubran su <b>potencial ilimitado</b>,
                   construyan la <b>vida que realmente desean</b> y se conviertan en la{" "}
                   <b>inspiración</b> que el mundo necesita.

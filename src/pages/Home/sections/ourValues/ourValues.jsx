@@ -1,4 +1,3 @@
-// OurValues con layout en divs + CSS (comentarios en español)
 import { Container, Box, Typography, Card, CardContent } from "@mui/material";
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
 import TrackChangesRoundedIcon from "@mui/icons-material/TrackChangesRounded";
@@ -26,30 +25,29 @@ const OurValues = ({ id = "valores" }) => {
     <section id={id} className="section-root values-root" style={{ scrollSnapAlign: "start" }}>
       <Container maxWidth="lg">
         <Box className="values-header">
-          <Typography variant="h3" className="values-title" gutterBottom>
+          <Typography variant="h3" className="values-title title-font" gutterBottom>
             Nuestros <span className="accent-gradient">Valores</span>
           </Typography>
-          <Typography variant="body1" color="text.secondary" className="values-subtitle">
+          <Typography variant="body1" color="text.secondary" className="values-subtitle text-font">
             Estos principios guían cada decisión que tomamos y cada paso que damos en nuestro
             camino hacia la evolución.
           </Typography>
         </Box>
 
-        {/* 👇 Layout en divs + CSS grid */}
         <div className="values-grid">
           {VALUES.map((v) => (
-            <div className="values-item" key={v.title}>
-              <Card elevation={6} className="value-card">
+            <div className="values-item " key={v.title}>
+              <div elevation={6} className="value-card">
                 <CardContent className="value-content">
                   <IconBox>{v.icon}</IconBox>
-                  <Box>
-                    <Typography variant="h6" fontWeight={800}>{v.title}</Typography>
-                    <Typography variant="body2" color="text.secondary" mt={0.5}>
+                  <Box className="value-copy">
+                    <p className="value-title title-font accent-gradient m-2">{v.title}</p>
+                    <Typography className="value-desc text-font" color="text.secondary">
                       {v.desc}
                     </Typography>
                   </Box>
                 </CardContent>
-              </Card>
+              </div>
             </div>
           ))}
         </div>

@@ -19,7 +19,7 @@ const NAV = [
   { label: "Inicio", href: "#inicio" },
   { label: "Sobre Nosotros", href: "#somos" },
   { label: "Áreas de Evolución", href: "#areas" },
-  { label: "Historias", href: "#comunidad" },
+  { label: "Historias", href: "#historia" },
   { label: "Recursos Gratis", href: "#recursos" },
   // { label: "Blog", href: "#blog" },
 ];

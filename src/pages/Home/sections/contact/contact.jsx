@@ -238,29 +238,6 @@ const Contact = ({ id = "contacto" }) => {
             </Card>
           </div>
         </div>
-
-        {/* Enlaces rápidos */}
-        <Card className="quicklinks-card" elevation={8}>
-          <CardContent className="quicklinks-inner">
-            <div className="ql-title">
-              <LinkRoundedIcon /> Enlaces Rápidos
-            </div>
-            <div className="ql-grid">
-              <a className="ql-btn ql-green" href="#desafio">
-                Programa 21 Días
-              </a>
-              <a className="ql-btn" href="#contacto">
-                Coaching 1:1
-              </a>
-              <a className="ql-btn ql-yellow" href="#blog">
-                Recursos Gratis
-              </a>
-              <a className="ql-btn" href="#historia">
-                Testimonios
-              </a>
-            </div>
-          </CardContent>
-        </Card>
       </Container>
     </section>
   );
