@@ -1,22 +1,11 @@
-// Contact section (comentarios en español)
-import {
-  Container,
-  Box,
-  Typography,
-  TextField,
-  Button,
-  Card,
-  CardContent,
-} from "@mui/material";
+import { Container, Box, Typography, TextField, Button } from "@mui/material";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import TikTokIcon from "@mui/icons-material/MovieFilterRounded"; // placeholder para TikTok
+import TikTokIcon from "@mui/icons-material/MovieFilterRounded";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import MailOutlineRoundedIcon from "@mui/icons-material/MailOutlineRounded";
 import PhoneIphoneRoundedIcon from "@mui/icons-material/PhoneIphoneRounded";
 import RoomRoundedIcon from "@mui/icons-material/RoomRounded";
-import AccessTimeRoundedIcon from "@mui/icons-material/AccessTimeRounded";
-import LinkRoundedIcon from "@mui/icons-material/LinkRounded";
 import "./styles.css";
 
 const socials = [
@@ -61,7 +50,6 @@ const socials = [
 const Contact = ({ id = "contacto" }) => {
   const onSubmit = (e) => {
     e.preventDefault();
-    // TODO: conecta con tu API o servicio (EmailJS, backend, etc.)
     alert("¡Gracias! Te contactaremos pronto.");
   };
 
@@ -72,16 +60,19 @@ const Contact = ({ id = "contacto" }) => {
       style={{ scrollSnapAlign: "start" }}
     >
       <Container maxWidth="lg">
-        {/* Header */}
         <Box className="contact-header">
-          <Typography variant="h3" className="contact-title" gutterBottom>
+          <Typography
+            variant="h3"
+            className="contact-title title-font"
+            gutterBottom
+          >
             Conéctate con{" "}
             <span className="accent-gradient">Rise Up Evolution</span>
           </Typography>
           <Typography
             variant="body1"
             color="text.secondary"
-            className="contact-subtitle"
+            className="contact-subtitle text-font"
           >
             Estamos aquí para apoyarte en cada paso de tu evolución. Conéctate
             con nosotros y únete a una comunidad que celebra el crecimiento y la
@@ -89,129 +80,132 @@ const Contact = ({ id = "contacto" }) => {
           </Typography>
         </Box>
 
-        {/* Layout principal */}
         <div className="contact-grid">
-          {/* Columna izquierda: formulario */}
-          <Card className="form-card" elevation={8}>
-            <CardContent>
-              <Typography variant="h5" fontWeight={900} gutterBottom>
-                ¿Listo para comenzar tu evolución?
-              </Typography>
-              <Typography variant="body2" color="text.secondary" mb={2}>
-                Cuéntanos sobre ti y cómo podemos ayudarte a alcanzar tus
-                objetivos
-              </Typography>
+          <div className="form-card " elevation={8}>
+            <Typography
+              variant="h5"
+              fontWeight={900}
+              gutterBottom
+              className="title-font"
+              textAlign={"center"}
+            >
+              ¿Listo para comenzar tu evolución?
+            </Typography>
+            <Typography
+              variant="body2"
+              color="text.secondary"
+              mb={2}
+              className="text-font"
+              textAlign={"center"}
+            >
+              Cuéntanos sobre ti y cómo podemos ayudarte a alcanzar tus
+              objetivos
+            </Typography>
 
-              <form className="contact-form" onSubmit={onSubmit}>
-                <div className="form-row two">
-                  <TextField
-                    label="Nombre"
-                    name="firstName"
-                    required
-                    fullWidth
-                  />
-                  <TextField
-                    label="Apellido"
-                    name="lastName"
-                    required
-                    fullWidth
-                  />
-                </div>
-
+            <form className="contact-form" onSubmit={onSubmit}>
+              <div className="form-row two">
+                <TextField label="Nombre" name="firstName" required fullWidth />
                 <TextField
-                  label="Email"
-                  type="email"
-                  name="email"
+                  label="Apellido"
+                  name="lastName"
                   required
                   fullWidth
                 />
+              </div>
 
-                <TextField
-                  label="Teléfono (opcional)"
-                  name="phone"
-                  fullWidth
-                  inputProps={{ inputMode: "tel" }}
-                />
+              <TextField
+                label="Email"
+                type="email"
+                name="email"
+                required
+                fullWidth
+              />
 
-                <TextField
-                  label="¿Cuáles son tus principales objetivos?"
-                  name="goals"
-                  multiline
-                  rows={3}
-                  fullWidth
-                />
+              <TextField
+                label="Teléfono (opcional)"
+                name="phone"
+                fullWidth
+                inputProps={{ inputMode: "tel" }}
+              />
 
-                <Button
-                  type="submit"
-                  variant="contained"
-                  size="large"
-                  className="submit-btn"
-                >
-                  Quiero ser parte de Rise Up Evolution
-                </Button>
+              <TextField
+                label="¿Cuáles son tus principales objetivos?"
+                name="goals"
+                multiline
+                rows={3}
+                fullWidth
+              />
 
-                <Typography
-                  variant="caption"
-                  color="text.secondary"
-                  display="block"
-                  mt={1}
-                >
-                  Al enviar este formulario, aceptas recibir comunicaciones de
-                  Rise Up Evolution. Tu información está segura con nosotros.
-                </Typography>
-              </form>
-            </CardContent>
-          </Card>
+              <Button
+                type="submit"
+                variant="contained"
+                size="large"
+                className="submit-btn text-font br-20"
+              >
+                Quiero ser parte de Rise Up Evolution
+              </Button>
 
-          {/* Columna derecha: redes + info */}
-          <div className="right-col">
-            {/* Grid redes */}
+              <Typography
+                variant="caption"
+                color="text.secondary"
+                display="block"
+                className="text-font"
+                textAlign={"center"}
+                mt={1}
+              >
+                Al enviar este formulario, aceptas recibir comunicaciones de
+                Rise Up Evolution. Tu información está segura con nosotros.
+              </Typography>
+            </form>
+          </div>
+
+          <div className="right-col  ">
             <div className="socials-grid">
               {socials.map((s) => (
-                <Card key={s.name} className="social-card" elevation={6}>
-                  <CardContent className="social-card-inner">
+                <div key={s.name} className="social-card   p-6" elevation={6}>
+                  <div className="social-card-inner">
                     <div className="social-icon" style={{ color: s.color }}>
                       {s.icon}
                     </div>
-                    <Typography variant="subtitle1" fontWeight={900}>
+                    <p
+                      variant="subtitle1"
+                      className="title-font"
+                      fontWeight={600}
+                    >
                       {s.name}
-                    </Typography>
-                    <Typography
-                      variant="body2"
+                    </p>
+                    <p
+                      variant="caption"
                       color="text.secondary"
-                      className="social-user"
+                      className="text-font m-0"
                     >
                       {s.user}
-                    </Typography>
-                    {/* <div className="social-stat">
-                      <span className="value">{s.stat}</span>{" "}
-                      <span>{s.statLabel}</span>
-                    </div> */}
-                    <Typography variant="caption" color="text.secondary">
+                    </p>
+                    <p
+                      variant="body2"
+                      color="text.secondary"
+                      className="social-user text-font"
+                    >
                       {s.desc}
-                    </Typography>
-                  </CardContent>
-                </Card>
+                    </p>
+                  </div>
+                </div>
               ))}
             </div>
 
-            {/* Tarjeta información de contacto */}
-            <Card className="info-card" elevation={8}>
-              <CardContent className="info-inner">
-                <Typography variant="h6" className="info-title">
-                  <span role="img" aria-label="phone">
-                    📞
-                  </span>{" "}
+            <div className="info-card " elevation={8}>
+              <div className="info-inner">
+                <p variant="h6" className="info-title title-font">
                   Información de Contacto
-                </Typography>
+                </p>
 
                 <div className="info-row">
                   <div className="info-ico">
                     <MailOutlineRoundedIcon />
                   </div>
                   <div>
-                    <div className="info-label">Email</div>
-                    <div className="info-value">hola@riseupevolution.com</div>
+                    <div className="info-label text-font">Email</div>
+                    <div className="info-value text-font">hola@riseupevolution.com</div>
                   </div>
                 </div>
 
@@ -220,8 +214,8 @@ const Contact = ({ id = "contacto" }) => {
                     <PhoneIphoneRoundedIcon />
                   </div>
                   <div>
-                    <div className="info-label">WhatsApp</div>
-                    <div className="info-value">+52 123 456 7890</div>
+                    <div className="info-label text-font">WhatsApp</div>
+                    <div className="info-value text-font">+52 123 456 7890</div>
                   </div>
                 </div>
 
@@ -230,12 +224,12 @@ const Contact = ({ id = "contacto" }) => {
                     <RoomRoundedIcon />
                   </div>
                   <div>
-                    <div className="info-label">Ubicación</div>
-                    <div className="info-value">Bogotá, Colombia</div>
+                    <div className="info-label text-font">Ubicación</div>
+                    <div className="info-value text-font">Bogotá, Colombia</div>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
         </div>
       </Container>

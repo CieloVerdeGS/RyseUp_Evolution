@@ -7,10 +7,16 @@
   padding: 24px 0;
 }
 
-#areas,
-#blog,
-#contacto {
+#areas {
   padding-top: 80px;
+}
+
+#contacto {
+  padding-top: 60px;
+}
+
+#somos {
+  padding-top: 20px;
 }
 
 #contacto {
@@ -48,4 +54,14 @@ body {
 
 .snap-section > *:first-child {
   margin-block-start: 0;
+}
+
+@media (max-width: 600px) {
+  #areas,
+  #blog,
+  #valores,
+  #desafio,
+  #contacto {
+    padding-top: 90px;
+  }
 }
