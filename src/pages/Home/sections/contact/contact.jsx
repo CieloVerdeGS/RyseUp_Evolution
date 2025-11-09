@@ -10,10 +10,38 @@ import RoomRoundedIcon from "@mui/icons-material/RoomRounded";
 import "./styles.css";
 
 const socials = [
-  { icon: <InstagramIcon />, name: "Instagram", user: "@riseupevolution", desc: "Inspiración diaria y tips", color: "#c13584" },
-  { icon: <TikTokIcon />, name: "TikTok", user: "@riseupevolution", desc: "Videos motivacionales", color: "#000000" },
-  { icon: <FacebookIcon />, name: "Facebook", user: "Rise Up Evolution", desc: "Comunidad y eventos", color: "#1877f2" },
-  { icon: <YouTubeIcon />, name: "YouTube", user: "Rise Up Evolution", desc: "Masterclasses completas", color: "#ff0000" },
+  {
+    icon: <InstagramIcon />,
+    name: "Instagram",
+    user: "@riseupevolution",
+    desc: "Inspiración diaria y tips",
+    color: "#c13584",
+    href: "https://www.instagram.com/riseupevolution/",
+  },
+  {
+    icon: <TikTokIcon />,
+    name: "TikTok",
+    user: "@riseupevolution",
+    desc: "Videos motivacionales",
+    color: "#000000",
+    href: "https://www.tiktok.com/@riseupevolution",
+  },
+  {
+    icon: <FacebookIcon />,
+    name: "Facebook",
+    user: "Rise Up Evolution",
+    desc: "Comunidad y eventos",
+    color: "#1877f2",
+    href: "https://www.facebook.com/riseupevolution",
+  },
+  {
+    icon: <YouTubeIcon />,
+    name: "YouTube",
+    user: "Rise Up Evolution",
+    desc: "Masterclasses completas",
+    color: "#ff0000",
+    href: "https://www.youtube.com/@riseupevolution",
+  },
 ];
 
 const Contact = ({ id = "contacto" }) => {
@@ -37,25 +65,53 @@ const Contact = ({ id = "contacto" }) => {
   };
 
   return (
-    <section id={id} className="section-root contact-root" style={{ scrollSnapAlign: "start" }}>
+    <section
+      id={id}
+      className="section-root contact-root"
+      style={{ scrollSnapAlign: "start" }}
+    >
       <Container maxWidth="lg">
         <Box className="contact-header">
-          <Typography variant="h3" className="contact-title title-font" gutterBottom>
-            Conéctate con <span className="accent-gradient">Rise Up Evolution</span>
+          <Typography
+            variant="h3"
+            className="contact-title title-font"
+            gutterBottom
+          >
+            Conéctate con{" "}
+            <span className="accent-gradient">Rise Up Evolution</span>
           </Typography>
-          <Typography variant="body1" color="text.secondary" className="contact-subtitle text-font">
-            Estamos aquí para apoyarte en cada paso de tu evolución. Conéctate con nosotros y únete a una comunidad que celebra el crecimiento y la transformación.
+          <Typography
+            variant="body1"
+            color="text.secondary"
+            className="contact-subtitle text-font"
+          >
+            Estamos aquí para apoyarte en cada paso de tu evolución. Conéctate
+            con nosotros y únete a una comunidad que celebra el crecimiento y la
+            transformación.
           </Typography>
         </Box>
 
         <div className="contact-grid">
           {/* ===== Formulario con react-hook-form ===== */}
           <div className="form-card" elevation={8}>
-            <Typography variant="h5" fontWeight={900} gutterBottom className="title-font" textAlign={"center"}>
+            <Typography
+              variant="h5"
+              fontWeight={900}
+              gutterBottom
+              className="title-font"
+              textAlign={"center"}
+            >
               ¿Listo para comenzar tu evolución?
             </Typography>
-            <Typography variant="body2" color="text.secondary" mb={2} className="text-font" textAlign={"center"}>
-              Cuéntanos sobre ti y cómo podemos ayudarte a alcanzar tus objetivos
+            <Typography
+              variant="body2"
+              color="text.secondary"
+              mb={2}
+              className="text-font"
+              textAlign={"center"}
+            >
+              Cuéntanos sobre ti y cómo podemos ayudarte a alcanzar tus
+              objetivos
             </Typography>
 
             <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
@@ -127,7 +183,8 @@ const Contact = ({ id = "contacto" }) => {
                 rules={{
                   pattern: {
                     value: /^[0-9+\-\s()]*$/,
-                    message: "Usa solo números y símbolos (+, -, espacios, paréntesis)",
+                    message:
+                      "Usa solo números y símbolos (+, -, espacios, paréntesis)",
                   },
                 }}
                 render={({ field, fieldState }) => (
@@ -161,12 +218,25 @@ const Contact = ({ id = "contacto" }) => {
                 )}
               />
 
-              <Button type="submit" variant="contained" size="large" className="submit-btn text-font br-20">
+              <Button
+                type="submit"
+                variant="contained"
+                size="large"
+                className="submit-btn text-font br-20"
+              >
                 Quiero ser parte de Rise Up Evolution
               </Button>
 
-              <Typography variant="caption" color="text.secondary" display="block" className="text-font" textAlign={"center"} mt={1}>
-                Al enviar este formulario, aceptas recibir comunicaciones de Rise Up Evolution. Tu información está segura con nosotros.
+              <Typography
+                variant="caption"
+                color="text.secondary"
+                display="block"
+                className="text-font"
+                textAlign={"center"}
+                mt={1}
+              >
+                Al enviar este formulario, aceptas recibir comunicaciones de
+                Rise Up Evolution. Tu información está segura con nosotros.
               </Typography>
             </form>
           </div>
@@ -175,10 +245,20 @@ const Contact = ({ id = "contacto" }) => {
           <div className="right-col">
             <div className="socials-grid">
               {socials.map((s) => (
-                <div key={s.name} className="social-card p-6" elevation={6}>
+                <div
+                  key={s.name}
+                  className="social-card p-6"
+                  elevation={6}
+                  onClick={() => window.open(s.href, "_blank")}
+                  style={{ cursor: "pointer" }}
+                >
                   <div className="social-card-inner">
-                    <div className="social-icon" style={{ color: s.color }}>{s.icon}</div>
-                    <p className="title-font" style={{ fontWeight: 600 }}>{s.name}</p>
+                    <div className="social-icon" style={{ color: s.color }}>
+                      {s.icon}
+                    </div>
+                    <p className="title-font" style={{ fontWeight: 600 }}>
+                      {s.name}
+                    </p>
                     <p className="text-font m-0">{s.user}</p>
                     <p className="social-user text-font">{s.desc}</p>
                   </div>
@@ -191,15 +271,21 @@ const Contact = ({ id = "contacto" }) => {
                 <p className="info-title title-font">Información de Contacto</p>
 
                 <div className="info-row">
-                  <div className="info-ico"><MailOutlineRoundedIcon /></div>
+                  <div className="info-ico">
+                    <MailOutlineRoundedIcon />
+                  </div>
                   <div>
                     <div className="info-label text-font">Email</div>
-                    <div className="info-value text-font">hola@riseupevolution.com</div>
+                    <div className="info-value text-font">
+                      hola@riseupevolution.com
+                    </div>
                   </div>
                 </div>
 
                 <div className="info-row">
-                  <div className="info-ico"><PhoneIphoneRoundedIcon /></div>
+                  <div className="info-ico">
+                    <PhoneIphoneRoundedIcon />
+                  </div>
                   <div>
                     <div className="info-label text-font">WhatsApp</div>
                     <div className="info-value text-font">+52 123 456 7890</div>
@@ -207,7 +293,9 @@ const Contact = ({ id = "contacto" }) => {
                 </div>
 
                 <div className="info-row">
-                  <div className="info-ico"><RoomRoundedIcon /></div>
+                  <div className="info-ico">
+                    <RoomRoundedIcon />
+                  </div>
                   <div>
                     <div className="info-label text-font">Ubicación</div>
                     <div className="info-value text-font">Bogotá, Colombia</div>

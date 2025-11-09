@@ -2,22 +2,15 @@ import {
   Container,
   Box,
   Typography,
-  Card,
   CardActionArea,
   CardMedia,
   CardContent,
-  Button,
   Chip,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
 } from "@mui/material";
 import RestaurantRoundedIcon from "@mui/icons-material/RestaurantRounded";
 import BusinessCenterRoundedIcon from "@mui/icons-material/BusinessCenterRounded";
 import AutoAwesomeRoundedIcon from "@mui/icons-material/AutoAwesomeRounded";
 import RocketLaunchRoundedIcon from "@mui/icons-material/RocketLaunchRounded";
-import FiberManualRecordRoundedIcon from "@mui/icons-material/FiberManualRecordRounded";
 import "./styles.css";
 
 const AREAS = [
@@ -55,7 +48,7 @@ const AREAS = [
     key: "spiritual",
     title: "Personal y Espiritual",
     url: "/personal-y-espiritual",
-    img: "https://images.unsplash.com/photo-1494797710133-75ad3b87a5f2?q=80&w=1600&auto=format&fit=crop",
+    img: "https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=1600&auto=format&fit=crop",
     color: "#bb39ff",
     ctaColor: "#d240ff",
     ctaText: "Explorar Personal y Espiritual",
@@ -126,16 +119,16 @@ const EvolutionAreas = ({ id = "areas" }) => {
                       component="img"
                       src={a.img}
                       alt={a.title}
-                      className="area-media "
+                      className="area-media text-font"
                     />
                     <span
-                      className="corner-shape "
+                      className="corner-shape text-font"
                       style={{ background: a.color }}
                     />
                     <Chip
                       icon={a.icon}
                       label={a.title}
-                      className="area-badge"
+                      className="area-badge text-font"
                       sx={{
                         bgcolor: "rgba(0,0,0,0.4)",
                         color: "#fff",

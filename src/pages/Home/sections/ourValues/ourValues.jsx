@@ -28,7 +28,7 @@ const OurValues = ({ id = "valores" }) => {
           <Typography variant="h3" className="values-title title-font" gutterBottom>
             Nuestros <span className="accent-gradient">Valores</span>
           </Typography>
-          <Typography variant="body1" color="text.secondary" className="values-subtitle text-font">
+          <Typography variant="body1" color="text.secondary" className="values-subtitle text-font" alignItems={'center'}>
             Estos principios guían cada decisión que tomamos y cada paso que damos en nuestro
             camino hacia la evolución.
           </Typography>

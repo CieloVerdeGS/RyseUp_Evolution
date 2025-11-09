@@ -1,4 +1,4 @@
- import Hero from "./sections/hero/hero";
+import Hero from "./sections/hero/hero";
 import WeAre from "./sections/weAre/weAre";
 import OurValues from "./sections/ourValues/ourValues";
 import EvolutionAreas from "./sections/evolutionAreas/evolutionAreas";
@@ -18,17 +18,33 @@ const Section = ({ id, children }) => (
 export default function Home() {
   return (
     <main className="snap-parent">
-      <Section id="inicio"><Hero /></Section>
-      <Section id="somos"><WeAre /></Section>
-      <Section id="valores"><OurValues /></Section>
-      <Section id="areas"><EvolutionAreas /></Section>
-      <Section id="desafio"><Challenge /></Section>
-      <Section id="historia"><History /></Section>
-      <Section id="recursos"><BlogAndResources /></Section>
-      <Section id="contacto"><Contact /></Section>
-      <section id="footer" clas sName="snap-section footer-section">
-      <Footer />
-    </section>
+      <Section id="inicio">
+        <Hero />
+      </Section>
+      <Section id="somos">
+        <WeAre />
+      </Section>
+      <Section id="valores">
+        <OurValues />
+      </Section>
+      <Section id="areas">
+        <EvolutionAreas />
+      </Section>
+      <Section id="desafio">
+        <Challenge />
+      </Section>
+      <Section id="historia">
+        <History />
+      </Section>
+      <Section id="recursos">
+        <BlogAndResources />
+      </Section>
+      <Section id="contacto">
+        <Contact />
+      </Section>
+      <section id="footer" className="footer-section">
+        <Footer />
+      </section>
     </main>
   );
 }
