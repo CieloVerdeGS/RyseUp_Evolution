@@ -41,6 +41,7 @@ export default function ModalShell({
     >
       {(title || onClose) && (
         <DialogTitle
+        className="title-font"
           sx={{
             fontWeight: 900,
             textAlign: "center",
@@ -62,6 +63,7 @@ export default function ModalShell({
               component="div"
               variant="body2"
               color="text.secondary"
+              className="text-font"
               sx={{ mt: 0.5, fontWeight: 500 }}
             >
               {subtitle}

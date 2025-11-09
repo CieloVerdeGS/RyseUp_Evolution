@@ -1,8 +1,8 @@
+/* === Base === */
 .challenge-root {
   background: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
 }
 
-/* ===== Card Principal ===== */
 .challenge-card {
   border-radius: 22px;
   padding: clamp(24px, 4vw, 40px);
@@ -10,42 +10,6 @@
   color: #fff;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
   text-align: center;
-}
-
-/* ===== Imagen decorativa ===== */
-.challenge-image-wrap {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 8px;
-}
-.challenge-header-img {
-  width: clamp(60px, 10vw, 100px);
-  height: auto;
-  opacity: 0.9;
-  animation: floatY 5s ease-in-out infinite;
-}
-
-/* ===== Títulos ===== */
-.challenge-header {
-  text-align: center;
-  margin-bottom: clamp(12px, 2.5vw, 20px);
-}
-.challenge-title {
-  font-weight: 900;
-  font-size: clamp(22px, 3.8vw, 34px);
-  line-height: 1.2;
-}
-.challenge-title .emoji {
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,.25));
-  margin-right: 6px;
-}
-.challenge-subtitle {
-  max-width: 920px;
-  margin: 0 auto;
-  color: rgba(255,255,255,0.95);
-  font-size: clamp(14px, 2.2vw, 18px);
-  line-height: 1.6;
-  padding: 0 clamp(6px, 2vw, 12px);
 }
 
 /* ===== GRID ===== */
@@ -56,43 +20,67 @@
   gap: 18px;
 }
 
-/* ===== Tarjetas iguales ===== */
-.feature-item {
-  height: 200px; /* 🔹 Todas iguales */
+/* ===== Feature Cards con fondo ===== */
+.feature-item.with-bg {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  height: 200px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  animation: floatY 6s ease-in-out infinite;
+  color: #fff;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.feature-item:hover {
+.feature-item.with-bg:hover {
   transform: translateY(-6px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.15),
-              inset 0 0 0 1px rgba(255,255,255,0.22);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.25);
+}
+
+/* Overlay para oscurecer la imagen y mejorar contraste */
+.feature-item.with-bg .feature-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  z-index: 1;
+}
+
+.feature-item.with-bg .feature-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
 }
 
 /* ===== Icono ===== */
 .feature-icon {
-  width: 54px;
-  height: 54px;
+  width: 56px;
+  height: 56px;
   border-radius: 12px;
   display: grid;
   place-items: center;
-  background: rgba(255,255,255,0.25);
-  box-shadow: inset 0 0 16px rgba(255,255,255,0.35);
-  margin-bottom: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.3);
 }
 .feature-icon-img {
   width: 32px;
   height: 32px;
   object-fit: contain;
+  filter: brightness(1.2);
 }
 .feature-item .MuiSvgIcon-root {
   color: #fff;
@@ -101,13 +89,13 @@
 
 /* ===== Textos ===== */
 .feature-title {
-  font-weight: 800;
+  font-weight: 900;
   font-size: clamp(14px, 2vw, 16px);
-  margin-bottom: 2px;
+  color: #fff;
 }
 .feature-desc {
   font-size: clamp(12px, 1.8vw, 14px);
-  color: rgba(255,255,255,0.9);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* ===== CTA ===== */
@@ -119,27 +107,26 @@
 .challenge-cta {
   text-transform: none;
   font-weight: 900;
-  border-radius: 9999px;
-  padding: 12px 24px;
-  background: #fff;
-  color: #199a55;
-  box-shadow: 0 10px 24px rgba(0,0,0,.18);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
-}
-.challenge-cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 28px rgba(0,0,0,.22);
+  border-radius: 30px;
+  padding: 12px 28px;
+  background: #ffffff !important;             /* Fondo blanco */
+  color: #1fbf63 !important;                  /* Texto verde principal */
+  border: 2px solid #1fbf63;      
+  box-shadow: 0 10px 24px rgba(31, 191, 99, 0.25);
+  transition: all 0.2s ease;
 }
 
-/* ===== Animación flotante ===== */
-@keyframes floatY {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
+.challenge-cta:hover {
+  background: #1fbf63 !important;             
+  color: #ffffff !important;                  
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(31, 191, 99, 0.35);
 }
+
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
-  .feature-item {
+  .feature-item.with-bg {
     height: 180px;
   }
 }
@@ -147,13 +134,10 @@
   .features-grid {
     grid-template-columns: 1fr;
   }
-  .challenge-header-img {
-    width: 70px;
-  }
   .challenge-card {
     padding: 18px 14px 28px;
   }
-  .feature-item {
-    height: 170px;
+  .feature-item.with-bg {
+    height: 160px;
   }
 }
