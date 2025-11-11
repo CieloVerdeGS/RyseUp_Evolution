@@ -11,6 +11,8 @@
   padding-top: 80px;
 }
 
+
+
 #contacto {
   padding-top: 60px;
 }
@@ -61,8 +63,12 @@ body {
   #blog,
   #valores,
   #desafio,
-  #contacto {
+   {
     padding-top: 90px;
   }
+  #historia , #contacto{
+  padding-top: 60px;
+
+}
 }
 

@@ -1,60 +1,80 @@
-// src/pages/EvolutionAreas.jsx
-import { useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
-import { Container, Box, Typography } from "@mui/material";
+import { useMemo, useEffect } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { Container } from "@mui/material";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Keyboard, Mousewheel, A11y } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "./styles.css";
 
-const AREA_CONTENT = {
-  wellness: {
-    title: "Salud y Bienestar",
-    intro:
-      "Transforma tu cuerpo y mente con hábitos saludables que perduran. Aquí encontrarás nutrición personalizada, rutinas efectivas y bienestar mental.",
-  },
-  business: {
-    title: "Negocios",
-    intro:
-      "Desarrolla habilidades y mentalidad para impulsar tu crecimiento profesional y empresarial con estrategias prácticas.",
-  },
-  spiritual: {
-    title: "Personal y Espiritual",
-    intro:
-      "Conecta con tu esencia, profundiza tu autoconocimiento y alinea tus decisiones con tu propósito.",
-  },
-  dreams: {
-    title: "Sueños",
-    intro:
-      "Define objetivos claros, planifica con intención y celebra tus logros en el camino hacia tus grandes metas.",
-  },
-};
+// Componentes de cada área
+import HealthAndWellness from "./HealthAndWellness";
+import Business from "./Business";
+import PersonalAndSpiritual from "./PersonalAndSpiritual";
+import Dreams from "./Dreams";
+
+const AREAS = [
+  { key: "wellness",  title: "Salud y Bienestar",     Component: HealthAndWellness },
+  { key: "business",  title: "Negocios",              Component: Business },
+  { key: "spiritual", title: "Personal y Espiritual", Component: PersonalAndSpiritual },
+  { key: "dreams",    title: "Sueños",                Component: Dreams },
+];
+
+const indexByKey = AREAS.reduce((a, r, i) => ((a[r.key] = i), a), {});
 
 export default function EvolutionAreasPage() {
   const [params] = useSearchParams();
-  const areaKey = params.get("area") || "wellness"; // default si no viene param
-  const data = AREA_CONTENT[areaKey] || AREA_CONTENT.wellness;
+  const navigate = useNavigate();
+
+  const areaParam = params.get("area");
+  const initialIndex = useMemo(
+    () => (Number.isFinite(indexByKey[areaParam]) ? indexByKey[areaParam] : 0),
+    [areaParam]
+  );
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [areaKey]);
+    if (!areaParam) {
+      navigate(`/areas-de-evolucion?area=${AREAS[initialIndex].key}`, { replace: true });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const onSlideChange = (swiper) => {
+    const i = swiper.activeIndex ?? 0;
+    const key = AREAS[i]?.key ?? "wellness";
+    navigate(`/areas-de-evolucion?area=${key}`, { replace: true });
+    window.scrollTo({ top: 0, behavior: "instant" });
+  };
 
   return (
-    <section className="section-root" style={{ padding: "80px 0" }}>
-      <Container maxWidth="lg">
-        <Box sx={{ textAlign: "center", mb: 2 }}>
-          <Typography variant="h3" className="title-font" gutterBottom>
-            {data.title}
-          </Typography>
-          <Typography variant="body1" className="text-font" color="text.secondary">
-            {data.intro}
-          </Typography>
-        </Box>
+    <section className="ea-root">
+      <button className="ea-nav ea-prev" aria-label="Anterior" />
+      <button className="ea-nav ea-next" aria-label="Siguiente" />
 
-        {/* Aquí renderizas lo que quieras para cada área:
-            cards, módulos, CTAs, etc. Puedes ramificar por areaKey */}
-        <Box sx={{ mt: 4 }}>
-          <Typography className="text-font">
-            (Contenido de <b>{data.title}</b> — coloca aquí tus secciones, recursos y CTAs específicos.)
-          </Typography>
-        </Box>
-      </Container>
+      <Swiper
+        modules={[Navigation, Keyboard, Mousewheel, A11y]}
+        className="ea-swiper"
+        navigation={{ prevEl: ".ea-prev", nextEl: ".ea-next" }}
+        keyboard={{ enabled: true }}
+        mousewheel={{ forceToAxis: true, sensitivity: 0.8 }}
+        slidesPerView={1}
+        spaceBetween={0}
+        loop={false}
+        autoHeight
+        initialSlide={initialIndex}
+        onSlideChange={onSlideChange}
+        a11y={{ prevSlideMessage: "Anterior", nextSlideMessage: "Siguiente" }}
+      >
+        {AREAS.map(({ key, title, Component }) => (
+          <SwiperSlide key={key}>
+            <div className="ea-slide">
+              <Container maxWidth="lg" className="ea-slide-inner">
+                <Component title={title} />
+              </Container>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </section>
   );
 }
