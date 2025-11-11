@@ -1,4 +1,3 @@
-// History (Testimonials) con Swiper (comentarios en español)
 import {
   Container,
   Box,
@@ -6,6 +5,7 @@ import {
   Card,
   CardContent,
   Chip,
+  Button,
 } from "@mui/material";
 import StarRoundedIcon from "@mui/icons-material/StarRounded";
 import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
@@ -13,10 +13,9 @@ import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 import EmojiEventsRoundedIcon from "@mui/icons-material/EmojiEventsRounded";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, A11y } from "swiper/modules";
+import { Navigation, A11y } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
 
 import "./styles.css";
 
@@ -26,37 +25,54 @@ const SLIDES = [
     role: "Deportista",
     initials: "RS",
     quote:
-      "La comunidad es increíble. El apoyo diario y las estrategias de Carol y Daniel me llevaron a competir a nivel nacional. Superé todos mis límites mentales.",
+      "La comunidad es increíble. El apoyo diario y las estrategias de Carol y Daniel me llevaron a competir a nivel nacional. Superé mis límites mentales.",
     achievement: "Competidor nacional de triatlón",
     tags: ["Salud", "Sueños"],
     before: "Deportista amateur sin confianza",
     after: "Atleta de alto rendimiento",
+    photos: [
+      "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1521417531039-96c8f2c1555a?w=1200&auto=format&fit=crop",
+    ],
   },
   {
     name: "Daniela Torres",
     role: "Emprendedora",
     initials: "DT",
     quote:
-      "Aprendí a gestionar mi energía y mi enfoque. Pasé de sentirme estancada a duplicar mis ingresos y disfrutar el proceso.",
+      "Aprendí a gestionar mi energía y mi enfoque. Dupliqué ingresos y ahora disfruto el proceso.",
     achievement: "Negocio rentable y sostenible",
     tags: ["Negocios", "Energía"],
     before: "Sin claridad y con estrés",
     after: "Liderazgo auténtico y crecimiento",
+    photos: [
+      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1200&auto=format&fit=crop",
+    ],
   },
   {
     name: "Carlos Pérez",
     role: "Docente",
     initials: "CP",
     quote:
-      "Desarrollé hábitos simples que cambiaron mi día. Mejoré mi salud, mi estado de ánimo y mi relación con el trabajo.",
+      "Con hábitos simples mejoré mi salud, ánimo y relación con el trabajo.",
     achievement: "Hábitos consistentes 90+ días",
     tags: ["Salud", "Propósito"],
     before: "Cansancio crónico",
     after: "Vitalidad y enfoque diario",
+    photos: [
+      "https://images.unsplash.com/photo-1544717305-996b815c338c?w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1552650272-b8a34e21bc4b?w=1200&auto=format&fit=crop",
+    ],
   },
 ];
 
-const History = ({ id = "historia" }) => {
+export default function History({ id = "historia" }) {
+  const goContact = (e) => {
+    e?.preventDefault?.();
+    document.querySelector("#contacto")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section
       id={id}
@@ -66,18 +82,11 @@ const History = ({ id = "historia" }) => {
       <Container maxWidth="lg">
         {/* Encabezado */}
         <Box className="history-header">
-          <Typography variant="h3" className="history-title" gutterBottom>
-            Historias de <span className="accent-gradient">Transformación</span>{" "}
-            Real
+          <Typography variant="h3" className="history-title title-font" gutterBottom>
+            Historias de <span className="accent-gradient">Transformación</span> Real
           </Typography>
-          <Typography
-            variant="body1"
-            color="text.secondary"
-            className="history-subtitle"
-          >
-            Conoce a las personas que decidieron evolucionar y ahora viven la
-            vida de sus sueños. Sus historias pueden ser la inspiración que
-            necesitas para comenzar tu propia transformación.
+          <Typography variant="body1" color="text.secondary" className="history-subtitle text-font">
+            Conoce a quienes eligieron evolucionar. Sus historias pueden inspirarte a iniciar la tuya.
           </Typography>
         </Box>
 
@@ -91,47 +100,37 @@ const History = ({ id = "historia" }) => {
           </button>
         </Box>
 
-        {/* Slider */}
+        {/* Slider sin dots */}
         <Swiper
-          modules={[Navigation, Pagination, A11y]}
+          modules={[Navigation, A11y]}
           slidesPerView={1}
           spaceBetween={16}
           loop
-          a11y={{ prevSlideMessage: "Anterior", nextSlideMessage: "Siguiente" }}
           navigation={{ prevEl: ".prev-btn", nextEl: ".next-btn" }}
-          pagination={{ clickable: true, el: ".history-dots" }}
           className="history-swiper"
         >
           {SLIDES.map((s) => (
             <SwiperSlide key={s.name}>
-              <Card className="testimonial-card" elevation={6}>
-                <CardContent className="testimonial-inner">
-                  {/* Columna izquierda: persona */}
+              <Card className="testimonial-card" elevation={5}>
+                <CardContent className="testimonial-inner" style={{ height: "100%" }}>
+                  {/* Col izquierda */}
                   <Box className="person-col">
-                    <div className="avatar-gradient">
+                    <div className="avatar-gradient title-font" aria-hidden>
                       <span>{s.initials}</span>
                     </div>
-
-                    <Typography
-                      variant="h5"
-                      fontWeight={900}
-                      className="person-name"
-                    >
+                    <Typography variant="h5" className="person-name title-font">
                       {s.name}
                     </Typography>
-                    <Typography
-                      variant="body2"
-                      color="text.secondary"
-                      className="person-role"
-                    >
+                    <Typography variant="body2" color="text.secondary" className="person-role text-font">
                       {s.role}
                     </Typography>
-
                     <div className="stars">
                       {Array.from({ length: 5 }).map((_, i) => (
                         <StarRoundedIcon key={i} />
                       ))}
                     </div>
+
+                    <Typography className="quote text-font">“{s.quote}”</Typography>
 
                     <div className="tags">
                       {s.tags.map((t) => (
@@ -139,45 +138,34 @@ const History = ({ id = "historia" }) => {
                           key={t}
                           size="small"
                           label={t}
-                          className="tag-chip"
+                          className="tag-chip text-font"
                           color="success"
                           variant="outlined"
                         />
                       ))}
                     </div>
+
+                    <div className="before-after-mini text-font">
+                      <div>
+                        <b>Antes:</b> {s.before}
+                      </div>
+                      <div>
+                        <b>Después:</b> {s.after}
+                      </div>
+                    </div>
+
+                    <Button onClick={goContact} className="hist-cta text-font" variant="contained">
+                      Contáctanos
+                    </Button>
                   </Box>
 
-                  {/* Columna derecha: quote + bloques */}
-                  <Box className="content-col">
-                    <Typography className="quote">“{s.quote}”</Typography>
-
-                    <Box className="highlight">
-                      <EmojiEventsRoundedIcon className="highlight-icon" />
-                      <div>
-                        <strong>Logro Principal:</strong>
-                        <div>{s.achievement}</div>
+                  {/* Col derecha: dos fotos */}
+                  <Box className="photos-col">
+                    {s.photos.map((src, idx) => (
+                      <div className="photo-wrap" key={idx}>
+                        <img src={src} alt={`${s.name} foto ${idx + 1}`} loading="lazy" />
                       </div>
-                    </Box>
-
-                    <Box className="before-after">
-                      <Card variant="outlined" className="ba-card ba-before">
-                        <CardContent>
-                          <Typography className="ba-title ba-title--before">
-                            Antes:
-                          </Typography>
-                          <Typography variant="body2">{s.before}</Typography>
-                        </CardContent>
-                      </Card>
-
-                      <Card variant="outlined" className="ba-card ba-after">
-                        <CardContent>
-                          <Typography className="ba-title ba-title--after">
-                            Después:
-                          </Typography>
-                          <Typography variant="body2">{s.after}</Typography>
-                        </CardContent>
-                      </Card>
-                    </Box>
+                    ))}
                   </Box>
                 </CardContent>
               </Card>
@@ -185,57 +173,20 @@ const History = ({ id = "historia" }) => {
           ))}
         </Swiper>
 
-        {/* Dots */}
-        <div className="history-dots" />
-
-        {/* Métricas + CTA grande */}
-        <Box className="history-stats-cta">
-          <div className="stats-grid">
-            <div className="stat">
-              <div className="stat-value">10K+</div>
-              <div className="stat-label">Miembros Activos</div>
-            </div>
-            <div className="stat">
-              <div className="stat-value">95%</div>
-              <div className="stat-label">Completaron el Desafío</div>
-            </div>
-            <div className="stat">
-              <div className="stat-value">150+</div>
-              <div className="stat-label">Países Representados</div>
-            </div>
-            <div className="stat">
-              <div className="stat-value">
-                4.9<span className="star">★</span>
-              </div>
-              <div className="stat-label">Calificación Promedio</div>
-            </div>
-          </div>
-
-          <Card className="cta-banner" elevation={8}>
-            <CardContent className="cta-inner">
-              <Typography variant="h4" className="cta-title">
-                ¿Lista para escribir tu historia de éxito?
-              </Typography>
-              <Typography variant="body1" className="cta-subtitle">
-                Únete a nuestra comunidad de evolución y comienza tu
-                transformación hoy. Miles de personas ya lo hicieron, ¡ahora es
-                tu turno!
-              </Typography>
-
-              <div className="cta-actions">
-                <a href="#contacto" className="cta-btn">
-                  Comparte tu historia de evolución
-                </a>
-                <a href="#contacto" className="cta-input-mock" aria-disabled>
-                  {/* placeholder visual tipo input */}
-                </a>
-              </div>
-            </CardContent>
-          </Card>
+        {/* CTA inferior simple */}
+        <Box className="cta-simple text-font">
+          <Typography variant="h5" className="cta-simple-title title-font">
+            ¿Lista para escribir tu historia de éxito?
+          </Typography>
+          <Button
+            onClick={goContact}
+            className="cta-simple-btn text-font"
+            variant="contained"
+          >
+            Comparte tu historia de evolución
+          </Button>
         </Box>
       </Container>
     </section>
   );
-};
-
-export default History;
+}

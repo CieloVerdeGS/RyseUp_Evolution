@@ -117,3 +117,11 @@
 .text-font {
   font-family: "Inconsolata", monospace !important;
 }
+
+a {
+  color: #10b76b !important;
+}
+
+a:hover {
+  color: #0c814d !important;
+}

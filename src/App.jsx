@@ -12,7 +12,7 @@ export default function App() {
       <main id="main">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/areas-de-evolucion" element={<EvolutionAreasPage />} /> {/* ✅ */}
+          <Route path="/areas-de-evolucion" element={<EvolutionAreasPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
