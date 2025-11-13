@@ -1,36 +1,16 @@
-import { Box, Typography, Grid, Paper, Button } from "@mui/material";
-
-export default function Dreams({ title }) {
+// src/pages/EvolutionAreas/Dreams/index.jsx
+import { Box, Typography } from "@mui/material";
+export default function Dreams() {
   return (
-    <Box sx={{ display: "grid", gap: 2 }}>
-      <Typography variant="h3" className="title-font" gutterBottom>
-        {title}
-      </Typography>
-      <Typography variant="body1" className="text-font" color="text.secondary">
-        Convierte tus sueños en proyectos con objetivos claros y hoja de ruta.
-      </Typography>
-
-      <Grid container spacing={2}>
-        {[1,2].map((i) => (
-          <Grid key={i} item xs={12} md={6}>
-            <Paper elevation={0} sx={{ p: 2.5, borderRadius: 3, boxShadow: "0 10px 24px rgba(0,0,0,.08)" }}>
-              <Typography className="title-font" fontWeight={800}>Toolkit {i}</Typography>
-              <Typography className="text-font" color="text.secondary">
-                Herramientas y plantillas para planificación y seguimiento.
-              </Typography>
-            </Paper>
-          </Grid>
-        ))}
-      </Grid>
-
-      <Button
-        variant="contained"
-        className="text-font"
-        onClick={() => document.querySelector("#contacto")?.scrollIntoView({ behavior: "smooth" })}
-        sx={{ alignSelf: "flex-start", mt: 1, borderRadius: "9999px", textTransform: "none", fontWeight: 900 }}
-      >
-        Quiero planear mi meta
-      </Button>
-    </Box>
+    <section style={{ padding: "40px 0" }}>
+      <Box sx={{ maxWidth: 1100, mx: "auto", px: 2, textAlign: "center" }}>
+        <Typography variant="h3" className="title-font" gutterBottom>
+          Sueños
+        </Typography>
+        <Typography className="text-font" color="text.secondary">
+          (Diseño pendiente) Objetivos claros, planificación y logros.
+        </Typography>
+      </Box>
+    </section>
   );
 }

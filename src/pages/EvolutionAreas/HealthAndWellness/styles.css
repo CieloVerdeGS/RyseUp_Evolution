@@ -1,0 +1,214 @@
+.health-page {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+}
+
+/* HERO ancho completo */
+.health-hero {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+/* Imagen de fondo */
+.health-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("https://images.unsplash.com/photo-1518614914945-0ebcd594ccb5?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(0.4);
+}
+
+/* Capa oscura + centro vertical */
+.health-hero-overlay {
+  position: relative;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.65) 40%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 16px 96px;
+}
+
+.health-hero-content {
+  max-width: 760px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* Pill superior */
+.health-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 18px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #10b676 0%, #30e08f 100%);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.4);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 18px;
+  font-size: 0.95rem;
+}
+
+.health-pill-ico {
+  font-size: 1.1rem;
+}
+
+/* Título & subtítulo del hero */
+.health-hero-title {
+  color: #ffffff;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+}
+
+.health-hero-sub {
+  color: #f5faf7;
+  max-width: 720px;
+  margin: 0 auto 20px;
+}
+
+/* Botones hero */
+.health-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.health-btn-primary {
+  text-transform: none;
+  font-weight: 900;
+  padding: 10px 26px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #17c465 0%, #4ee08f 100%);
+  box-shadow: 0 12px 26px rgba(23, 196, 101, 0.4);
+}
+
+.health-btn-primary:hover {
+  background: linear-gradient(90deg, #12a955 0%, #34c777 100%);
+}
+
+.health-btn-secondary {
+  text-transform: none;
+  font-weight: 700;
+  padding: 10px 26px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  backdrop-filter: blur(4px);
+}
+
+/* SECCIÓN INFERIOR */
+.health-section {
+  padding: 56px 16px 72px;
+  text-align: center;
+}
+
+.health-section-header {
+  max-width: 900px;
+  margin: 0 auto 32px;
+}
+
+.health-section-eyebrow {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.health-section-text {
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+/* Grid de features */
+/* .health-features-grid {
+  max-width: 1080px;
+  margin: 0 auto;
+} */
+
+.health-feature {
+  text-align: center;
+}
+
+/* Círculo con icono */
+.health-icon-circle {
+  width: 82px;
+  height: 82px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #00c896 0%, #04e3b0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+  color: #ffffff;
+}
+
+.health-icon-circle svg {
+  font-size: 2rem;
+}
+
+.health-feature-title {
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.health-feature-text {
+  font-size: 0.95rem;
+}
+
+/* CTA inferior */
+.health-cta {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.health-cta-btn {
+  text-transform: none;
+  font-weight: 900;
+  padding: 12px 26px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #15b15d 0%, #5dde98 100%);
+  box-shadow: 0 12px 28px rgba(21, 177, 93, 0.35);
+}
+
+.health-cta-btn:hover {
+  background: linear-gradient(90deg, #119b51 0%, #46c780 100%);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .health-hero-overlay {
+    padding: 110px 16px 80px;
+  }
+
+  .health-hero-title {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .health-hero {
+    min-height: 380px;
+  }
+
+  .health-hero-title {
+    font-size: 1.5rem;
+  }
+
+  .health-section {
+    padding-top: 40px;
+  }
+}
+ 

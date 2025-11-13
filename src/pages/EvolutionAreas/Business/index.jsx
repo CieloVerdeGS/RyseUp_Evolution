@@ -1,25 +1,22 @@
-import { Box, Typography, Grid, Paper } from "@mui/material";
+// src/pages/EvolutionAreas/Business/index.jsx
+import { Box, Typography, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
-export default function Business({ title }) {
+export default function Business() {
+  const navigate = useNavigate();
   return (
-    <Box sx={{ display: "grid", gap: 2 }}>
-      <Typography variant="h3" className="title-font" gutterBottom>
-        {title}
-      </Typography>
-      <Typography variant="body1" className="text-font" color="text.secondary">
-        Estrategias prácticas para crecer: networking, liderazgo auténtico y enfoque comercial.
-      </Typography>
-
-      <Grid container spacing={2}>
-        {[1,2,3,4].map((i) => (
-          <Grid key={i} item xs={12} sm={6}>
-            <Paper elevation={0} sx={{ p: 2, borderRadius: 3, boxShadow: "0 10px 24px rgba(0,0,0,.08)" }}>
-              <Typography className="title-font" fontWeight={800}>Módulo {i}</Typography>
-              <Typography className="text-font" color="text.secondary">Descripción corta del módulo.</Typography>
-            </Paper>
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
+    <section style={{ padding: "40px 0" }}>
+      <Box sx={{ maxWidth: 1100, mx: "auto", px: 2, textAlign: "center" }}>
+        <Typography variant="h3" className="title-font" gutterBottom>
+          Negocios
+        </Typography>
+        <Typography className="text-font" color="text.secondary">
+          (Diseño pendiente) Estrategias, liderazgo y crecimiento.
+        </Typography>
+        <Button onClick={() => navigate("/#contacto")} sx={{ mt: 2 }} variant="contained">
+          Contáctanos
+        </Button>
+      </Box>
+    </section>
   );
 }

@@ -1,3 +1,4 @@
+// src/pages/EvolutionAreas/index.jsx
 import { useMemo, useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { Container } from "@mui/material";
@@ -7,7 +8,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "./styles.css";
 
-// Componentes de cada área
 import HealthAndWellness from "./HealthAndWellness";
 import Business from "./Business";
 import PersonalAndSpiritual from "./PersonalAndSpiritual";
@@ -34,7 +34,9 @@ export default function EvolutionAreasPage() {
 
   useEffect(() => {
     if (!areaParam) {
-      navigate(`/areas-de-evolucion?area=${AREAS[initialIndex].key}`, { replace: true });
+      navigate(`/areas-de-evolucion?area=${AREAS[initialIndex].key}`, {
+        replace: true,
+      });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -68,7 +70,11 @@ export default function EvolutionAreasPage() {
         {AREAS.map(({ key, title, Component }) => (
           <SwiperSlide key={key}>
             <div className="ea-slide">
-              <Container maxWidth="lg" className="ea-slide-inner">
+               <Container
+                maxWidth={false}
+                disableGutters
+                className="ea-slide-inner"
+              >
                 <Component title={title} />
               </Container>
             </div>
